@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#aa{
+				width: 500px;
+				height:500px;
+				border: 1px solid red;
+				position: absolute;
+				top: 0;
+				left: 0px;
+				
+			}
+			#bb{
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				top: 0;
+				border: 1px solid red;
+				background: rgba(0,0,0,1);
+			}
+			img{
+				width: 500px;
+				height: 500px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="aa" >
+			<img src="img/02.jpg" />
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+			for(var j=0;j<10;j++){
+				for(var k = 0;k<10;k++){
+					document.body.innerHTML+='<div id="bb" style="left:'+k*50+'px;top:'+j*50+'px"></div>';
+				}
+			}
+			//获取DIV宽度
+//		var oAa = document.getElementById('aa');
+//		alert(oAa.offsetWidth)
+		var n =1;
+		var m = 100;
+		var oDiv = document.getElementsByTagName("div")
+		for(var i = 0;i<oDiv.length;i++){
+			oDiv[i].onmousemove=function(){
+				this.style.background= 'rgba(0,0,0,0)';
+			}
+		}
+		//setInterval("rd("+0+","+100+")",2000); //每隔2S产生
+		//setTimeout("rd("+5+","+100+")",2000);//等待2S 产生
+		var a=[];
+		function rd(n,m){
+			var c = m-n+1;
+			var num =  Math.floor(Math.random()*c+n)
+			for(var i = 0;i<=a.length;i++){
+				if(a[i]!=num){
+					a.push(num)
+					break;
+				}
+			}
+			console.log(a)
+			oDiv[num].style.background= 'rgba(0,0,0,0)';
+		}
+	</script>
+	
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#top{
+				height: 400px;
+				width: 600px;
+				border: 1px solid red;
+			}
+			#butt{
+				float: left;
+			}
+			#butt ul li{
+				margin-left: -40px;
+				margin-top: -15px;
+				height: 109px;
+				border-bottom: 1px solid #696969;
+				border-top: 1px solid #696969;
+				line-height: 95px;
+				text-align: center;
+				width: 120px;
+				list-style: none;
+				background:gainsboro;			}
+			#cont_img{
+					width: 480px;
+					height: 100%;
+					float: left;
+				}
+			#cont_img ul li{
+				display: inline-block;
+				width: 31%;
+				height: 30px;
+				color: white;
+				text-align: center;
+				background: black;
+				background: rgba(0,0,0,0.3);
+				line-height: 30px;
+				/*opacity: 0.5;*/
+				margin-left: 4px;
+			}
+			#list{
+				width: 100%;
+				height: 30px;
+				margin-left: -40px;
+				margin-top: -35px;
+			}	
+		</style>
+	</head>
+	<body>
+		<div id="top">
+			<div id="butt">
+				<ul >
+					<li style="background: white;">最新团购</li>
+					<li>商城特惠</li>
+					<li>名品推荐</li>
+					<li>缤纷活动</li>
+				</ul>
+			</div>
+			<div id="cont_img">
+					<img src="img/JD01.jpg" width="100%" height="100%"/>
+					<ul id="list">
+						<li style="background: red;">ZX01</li>
+						<li>ZX02</li>
+						<li>ZX03</li>
+					</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var oTop = document.getElementById('top');//最大DIV
+		var oButt= document.getElementById('butt');//大项 
+		var oCont=document.getElementById('cont_img');//图片及小项
+		var oImg= oCont.getElementsByTagName('img')[0];//图片
+		var oList =document.getElementById('list')//小项UL
+		var bLi= oButt.getElementsByTagName('li');//大项LI
+		var cLi=oList.getElementsByTagName('li');//小项LI
+		var arra=[
+			['ZX01','ZX02','ZX03'],
+			['TH01','TH02','TH03','TH04'],
+			['TJ01','TJ02','TJ03','TJ04','TJ05'],
+			['HD01','HD02']
+		];
+		var arra1=[
+			['img/JD01.jpg','img/JD02.jpg','img/JD03.jpg'],
+			['img/04.jpg','img/05.jpg','img/JD06.jpg','img/JD07.jpg'],
+			['img/JD03.jpg','img/JD02.jpg','img/JD01.jpg','img/JD08.jpg','img/JD05.jpg'],
+			['img/JD04.jpg','img/JD05.jpg']
+		]
+		var lenImg=cLi.length;
+		//鼠标进入DIV 则鼠标样式改变
+		oTop.onmouseover=function(){
+			oTop.style.cursor='pointer';
+		}
+		//定义大项的编号
+		var num=0;
+		//调用点击小项所产生的事件
+		fn();
+		//循环大项，赋给大项点击切换事件
+		for(var i =0;i<bLi.length;i++){
+			bLi[i].index=i;
+			bLi[i].onmouseover=function(){
+				num=this.index;
+				// 恢复所有LI 背景 ，再修改
+				for(var j = 0;j<bLi.length;j++){
+					bLi[j].style.background='gainsboro';
+				}
+				this.style.background='white';
+				//从二维数组里面获取该点击的LI 的一维数组长度
+				var len = arra[this.index].length;
+				//清空图片下面的LI 选项
+				oList.innerHTML=' ';
+				//查询每个大项的数组里面有几个小项，然后添加LI 
+				for(var k =0;k<len;k++){
+					oList.innerHTML+='<li>'+arra[this.index][k]+'</li>';
+					cLi[k].style.width=(100/len)-1+'%';
+					cLi[0].style.background='red';
+				 	lenImg=cLi.length;
+				 	//调用点击小项图片切换的事件
+				 	fn();
+				}
+				//每个大项所第一个显示的图片
+				 	oImg.src=arra1[num][0];
+			}
+			
+		}
+			
+			function fn(){
+				//循环所有小项添加事件
+					for(var i = 0;i<lenImg;i++){
+						//赋给小项自定义属性
+						cLi[i].oo=i;
+						cLi[i].onmouseover=function(){
+							//根据大项的NUM 点击小项切换相应图片
+							oImg.src=arra1[num][this.oo]
+							//先恢复所有小项背景
+							for(var k = 0;k<lenImg;k++){
+								cLi[k].style.background='black';
+								cLi[k].style.background='rgba(0,0,0,0.3)';
+							}
+							//添加所点击的小项背景
+								this.style.background='red';
+						}
+					}
+			}
+			
+	</script>
+	
+	
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#cont{
+				position: absolute;
+				top: 50px;
+				width: 500px;
+				border: 1px solid black;
+			}
+			ul{
+				display: inline-block;
+				list-style: none;
+			}
+		
+			#category{
+				font-size: 12px;
+				color: #a8a8a8;
+			}
+			#info{
+				font-size: 14px;
+			}
+			#news{
+				height: 80px;
+				width: 200px;
+				text-align: left;
+				background-color: white;
+				/*display: none;*/
+
+			}
+			#news{
+				position: absolute;
+				left: 00px;
+				top: -27px;
+			}
+			#news1{
+				font-size: 20px;
+				margin-top: 0px;
+				margin-left: 0px;
+				background: #94BDD6;
+				padding-left: 10px;
+			}
+			#news2{
+				width: 100%;
+				height: 24px;
+				font-size: 18px;
+				margin-top: -18px;
+				z-index:999;
+			}
+			#bb{
+				width: 100%;
+				height: 13px;
+				background-color: darksalmon;
+			}
+			#cc{
+				width: 12px;
+				height: 12px;
+				background-color: darksalmon;
+				-webkit-transform:rotate(45deg); 
+				margin-top: -6px;
+				margin-left: 22px;
+			}
+			.active{
+				width: 100px;
+				text-align: center;
+				float: left;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="cont">
+				<p >最新上架</p>
+				<hr color="black">	
+		
+			<div id="news">
+					<p id="news1">搜狐汽车图库</p>
+					<p id="news2">搜狐汽车的介绍文字</p>
+					<div id="bb"></div>
+					<div id="cc"></div>
+			</div>
+			<!--<div class="active" >
+					<img src="img/01.jpg" width="70px " height="70px">
+					<p id="info">娱乐</p>
+					<p id="category">新闻类</p>
+			</div>
+			<div class="active">
+					<img src="img/02.jpg" width="70px " height="70px">
+					<p id="info">娱乐</p>
+					<p id="category">新闻类</p>
+			</div>-->
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		
+		var oCont=document.getElementById('cont');
+		var arra = [
+			{"srcImg":"img/01.jpg",//1
+				"infoText":"娱乐",
+				"text":"新闻类"},
+			{"srcImg":"img/02.jpg",//2
+				"infoText":"封面人物",
+				"text":"人物类"},
+			{"srcImg":"img/03.jpg",//3
+				"infoText":"海岛大亨",
+				"text":"游戏类"},
+			{"srcImg":"img/04.jpg",//4
+				"infoText":"酷客天气",
+				"text":"天气类"},
+			{"srcImg":"img/01.jpg",//5
+				"infoText":"娱乐",
+				"text":"新闻类"},
+			{"srcImg":"img/02.jpg",//6
+				"infoText":"封面人物",
+				"text":"人物类"},
+			{"srcImg":"img/03.jpg",//7
+				"infoText":"海岛大亨",
+				"text":"游戏类"},
+			{"srcImg":"img/04.jpg",//8
+				"infoText":"酷客天气",
+				"text":"天气类"},
+			{"srcImg":"img/01.jpg",//9
+				"infoText":"娱乐",
+				"text":"新闻类"},
+			{"srcImg":"img/02.jpg",//10
+				"infoText":"封面人物",
+				"text":"人物类"},
+			{"srcImg":"img/03.jpg",//11
+				"infoText":"海岛大亨",
+				"text":"游戏类"},
+			{"srcImg":"img/04.jpg",//12
+				"infoText":"酷客天气",
+				"text":"天气类"},
+			{"srcImg":"img/01.jpg",//13
+				"infoText":"娱乐",
+				"text":"新闻类"},
+			{"srcImg":"img/02.jpg",//14
+				"infoText":"封面人物",
+				"text":"人物类"},
+			{"srcImg":"img/03.jpg",//15
+				"infoText":"海岛大亨",
+				"text":"游戏类"},
+		];
+		for(var i=0;i<arra.length;i++){
+			oCont.innerHTML+='<div class="active" index="'+(i+1)+'">'
+							+'<p><img src="'+arra[i].srcImg+'" width="70px " height="70px"></p>'
+							+'<p id="info">'+arra[i].infoText+'</p>'
+							+'<p id="category">'+arra[i].text+'</p>'
+							+'</div>';
+		}
+		var oActive = document.getElementsByClassName('active');
+		var oNews=document.getElementById('news')
+		for(var i=0;i<oActive.length;i++){
+			oActive[i].index=i
+			oActive[i].onmouseover=function(){
+					oNews.style.display='block'
+					oNews.style.position='absolute'
+					oNews.style.left=(this.index+1)*80+'px'
+					oNews.style.top=-27+'px';
+					
+				if(this.index>4 && this.index<10){
+					oNews.style.left=(this.index-4)*80+'px';
+					oNews.style.top=2*75+'px';
+				}
+				if(this.index>9 && this.index<15){
+					oNews.style.left=(this.index-9)*80+'px';
+					oNews.style.top=4*75+'px';
+				}
+			}
+			oActive[i].onmouseout=function(){
+				oNews.style.display='none'
+			}
+			
+			
+			
+		}
+	</script>
+</html>

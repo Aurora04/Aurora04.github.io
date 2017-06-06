@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			input{
+				border: none;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<ul id="list">
+			<li>
+				<button>-</button>
+				<input type="text" value=""  />
+				<button>+</button>
+				单价：<font color="red">135.6</font>元
+				小计：<font color="red">0</font>元
+			</li>
+			<li>
+				<button>-</button>
+				<input type="text"  />
+				<button>+</button>
+				单价：<font color="red">85</font>元
+				小计：<font color="red">0</font>元
+			</li><li>
+				<button>-</button>
+				<input type="text"  />
+				<button>+</button>
+				单价：<font color="red">96</font>元
+				小计：<font color="red">0</font>元
+			</li><li>
+				<button>-</button>
+				<input type="text"  />
+				<button>+</button>
+				单价：<font color="red">32.56</font>元
+				小计：<font color="red">0</font>元
+			</li><li>
+				<button>-</button>
+				<input type="text"/>
+				<button>+</button>
+				单价：<font color="red">78.23</font>元
+				小计：<font color="red">0</font>元
+			</li>
+		</ul>
+		  商品合计共：<font id="goods" color="red">0</font>件；
+		  合计：<font id="total" color="red">0</font>元
+	</body>
+	<script type="text/javascript">
+		var oUl = document.getElementById('list');
+		var oLi =document.getElementsByTagName('li');
+		for(var i = 0;i<oLi.length;i++){
+			change(oLi[i]);
+		}
+		function change(obj){
+			var oMinu= obj.getElementsByTagName('button')[0];//减
+			var oPush= obj.getElementsByTagName('button')[1];//加
+			var oInput = obj.getElementsByTagName('input')[0];//数量数据框
+			var oPrice= obj.getElementsByTagName('font')[0];//单价
+			var oSubtotal= obj.getElementsByTagName('font')[1];//小计
+			var oGoods= document.getElementById('goods');//总件数
+			var oTotal = document.getElementById('total');//合计价格
+			var num = 0;
+//			alert(oPrice.innerHTML)
+			oInput.value=num;
+			//声明件数
+			var piece=0;
+			//声明总价
+			var element=0;
+		//件数输入框宽度自适应
+			oInput.style.width=oInput.value.length*15+'px';
+			oMinu.onclick=function(){
+				oInput.style.width=oInput.value.length*15+'px';
+				num--;
+				if(num==0 ||num<0){
+					num=0
+				}
+				sum(num);
+				count();
+			}
+			oPush.onclick=function(){
+				oInput.style.width=oInput.value.length*15+'px';
+				num++;
+				sum(num);
+				count();
+			}
+		//显示单个商品小计
+			function sum(num){
+				oInput.value=num;
+				var c =num*oPrice.innerHTML;
+				oSubtotal.innerHTML=c.toFixed(2);
+			}
+		//显示全部商品总件数和总价
+			function count(){
+				//没改变一次将总件数和合计金额清零。
+					piece=0;
+					element=0;
+					for(var i =0;i<oLi.length;i++){
+						//循环获取商品件数的数量
+						var oInput1 =oLi[i].getElementsByTagName('input')[0].value;
+						//获取商品小计的价格
+						var oSubtotal= oLi[i].getElementsByTagName('font')[1].innerHTML;
+						//商品数量相加
+						piece+=parseFloat(oInput1);
+						//商品小计相加
+						element+=parseFloat(oSubtotal);
+						//总件数
+						oGoods.innerHTML=piece
+						//合计价格
+						oTotal.innerHTML=element.toFixed(2)
+					}
+			}
+		}
+	</script>	
+</html>

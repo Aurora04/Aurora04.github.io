@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#top{
+				width: 650px;
+				height: 500px;
+				background-color: dimgray;
+			}
+			#top_1{
+				width: 600px;
+				height: 400px;
+				margin: auto auto;
+			}
+			#list{
+				margin: auto auto;
+			}
+			#list li{
+				float: left;
+				margin: auto 10px;
+				color: white;
+				font-size: 40px;
+			}
+		
+			#right{
+				height: 50px;
+				width: 50px;
+				background-color:dimgray ;
+				background: rgba(0,0,0,0.1);
+				text-align: center;
+				line-height: 50px;
+				border-radius: 25px;
+				position: relative;
+				top: -300px;
+				left: 550px;
+			}
+			#left{
+				height: 50px;
+				width: 50px;
+				background-color:dimgray ;
+				background: rgba(0,0,0,0.1);
+				text-align: center;
+				line-height: 50px;
+				border-radius: 25px;
+				position: relative;
+				top: -350px;
+				left: 70px;
+			}
+			#img2{border: 3px solid white;
+			width: 70px;
+			height: 70px;
+			display: none;
+			}
+			#oo em{
+				width: 6px;
+				height: 6px;
+				background:white;
+				position: absolute;
+				margin-left: 35px;
+				margin-top: -3px;
+				-webkit-transform: rotate(45deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="top">
+			<font size="5"color="white"><b>缩略图图片轮换</b></font>
+			<div id="top_1">
+				<img id="img1" src="img/JD01.jpg" width="100%" height="100%"/>
+			</div>
+			<div id="oo" style="width: 70px; 
+				height: 70px; margin-top: -70px;">
+				<img id ="img2"  src="img/JD01.jpg" />
+				<em></em>
+			</div>
+			<ul id="list">
+				<li style="color: red;"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		
+		</div>
+			<div id="right">
+				<a href="#" style="text-decoration: none;">
+					<font size="5" color="white">
+					<b>&gt;</b></font>
+				</a>
+			</div>
+			<div id="left">
+				<a href="#" style="text-decoration: none;">
+					<font size="5" color="white">
+					<b>&lt;</b></font>
+				</a>
+			</div>
+	</body>
+	<script type="text/javascript">
+		var oDiv= document.getElementsByTagName('div');
+		var oList=document.getElementById('list');
+		var oo=document.getElementById('oo');
+		var oLi= document.getElementsByTagName('li');
+		var oRight=document.getElementById('right');
+		var oLeft = document.getElementById('left');
+		var oImg1 = document.getElementById('img1');
+		var oImg2 = document.getElementById('img2');
+		var arr=[
+			'img/JD01.jpg',
+			'img/JD02.jpg',
+			'img/JD03.jpg',
+			'img/JD04.jpg',
+			'img/JD05.jpg',
+			'img/JD06.jpg',
+			'img/JD07.jpg',
+			'img/JD08.jpg',
+		];
+		var lLen=oLi.length;
+		var num=0;
+		oList.style.marginLeft=(lLen*60)/2+'px';
+		oo.style.marginLeft=225+'px';
+		for(var i =0;i<lLen;i++){
+			oLi[i].index=i;
+			oLi[i].onmouseover=function(){
+				oImg2.style.display='block';
+				oo.style.marginLeft=225+(this.index*20)+'px';
+//				oo.style.transform='rotate(45deg)';
+//				oo.style.webkitTransform='rotate(45deg)';
+				oImg2.src=arr[this.index]
+			}
+			oLi[i].onmouseout=function(){
+				oImg2.style.display='none';
+			}
+			oLi[i].onclick=function(){
+				num=this.index;
+				TH(num);
+			}
+			oLeft.onclick=function(){
+				if(num==0){
+					num=lLen-1
+				}else{
+					num--;
+				}
+				TH(num);
+			}
+			oRight.onclick=function(){
+				if(num==lLen-1){
+					num=0
+				}else{
+					num++;
+				}
+				TH(num);
+			}
+	
+		}
+		var time = window.setInterval(function(){
+			if(num==lLen-1){
+					num=0
+				}else{
+					num++;
+				}
+				TH(num);
+		},2000);
+		for(var k=0;k<oDiv.length;k++){
+			oDiv[k].onmouseover=function(){
+				oRight.style.background='rgba(0,0,0,0.5)';
+				oLeft.style.background='rgba(0,0,0,0.5)';
+				window.clearInterval(time);
+			}
+			oDiv[k].onmouseout=function(){
+				oRight.style.background='rgba(0,0,0,0.1)';
+				oLeft.style.background='rgba(0,0,0,0.1)';
+//				time = window.setInterval(function(){
+//				if(num==lLen-1){
+//						num=0
+//					}else{
+//						num++;
+//					}
+//					TH(num);
+//				},2000)
+			}
+		}
+		function TH(num){
+			oImg1.src=arr[num]
+				for(var j = 0;j<lLen;j++){
+					oLi[j].style.color='white';
+				}
+				oLi[num].style.color='red';
+		}
+		
+		
+	</script>
+	
+</html>
