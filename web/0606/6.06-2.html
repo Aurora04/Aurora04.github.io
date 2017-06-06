@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul{
+				list-style: none;
+			}
+			li{
+				font-size: 12px;
+				color: #A8A8A8;
+				margin-top: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="checkbox" name="" id="whole" value="" />
+		<button id="opt">全选</button>
+		<button id="invert">反选</button>
+		<hr />
+	<ul>
+			<li><input type="checkbox">十年</li>
+			<li><input type="checkbox">陪我度过漫长岁月</li>
+			<li><input type="checkbox">红玫瑰</li>
+			<li><input type="checkbox">白玫瑰</li>
+			<li><input type="checkbox">我的背包</li>
+			<li><input type="checkbox">浮夸</li>
+			<li><input type="checkbox">K歌之王</li>
+			<li><input type="checkbox">淘汰</li>
+			<li><input type="checkbox">情歌王</li>
+			<li><input type="checkbox">天空之城</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		var oButt= document.getElementById('opt');//全选
+		var oInvert= document.getElementById('invert');//反选
+		var oWhole= document.getElementById('whole');//全选前面的选择框
+		var oUl = document.getElementsByTagName('ul')[0];//装复选框的UL
+		var oInput = oUl.getElementsByTagName('input');//UL 里面每个复选框
+		var Len = oInput.length;//复选框的长度
+		var num=0;//将复选框选定的个数 赋给NUM
+		//单机每个复选框，就调用一次。判断选择了几个的方法WHOL();
+		for(var i=0;i<Len;i++){
+			oInput[i].onclick=function(){
+				whol();
+			}
+		}
+		//点击全选按钮。全部选择，然后进入判断是否复选框全部选中
+		oButt.onclick=function(){
+			for(var i = 0;i<Len;i++){
+				oInput[i].checked=true;
+			}
+					whol();
+		}
+		//点击全选 前面的选择框。进入WHOL()方法判断是否全部选中
+		oWhole.onclick=function(){
+			if(!oWhole.checked){
+				for(var i = 0;i<Len;i++){
+					oInput[i].checked=false;
+				}
+			}else{
+				for(var i = 0;i<Len;i++){
+					oInput[i].checked=true;
+				}
+			}
+			whol();
+		}
+		//点击反选，则选中之前没有选中的项目。之前选中的则不选中。然后调入方法判断选中了几个；
+		oInvert.onclick=function(){
+			for(var i = 0;i<Len;i++){
+				if(oInput[i].checked){
+					oInput[i].checked=false;
+				}else{
+					oInput[i].checked=true;
+				}
+			}
+			whol();
+		}
+		//判断是否所有选框都选中。如都选中。则全选
+		function whol(){
+			//重置NUM。从0开始；
+			num=0;
+			//循环判断所有复选框是否都选中
+			for(var i = 0;i<Len;i++){
+				if(oInput[i].checked){
+					num++;
+				}else{
+					num--;
+				}
+			}
+			//如果全部选中。则全选
+			if(num==Len){
+				oWhole.checked=true;
+			}else{
+				oWhole.checked=false;
+			}
+		}
+	</script>
+	
+</html>

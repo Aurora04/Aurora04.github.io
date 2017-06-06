@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			span{
+				color: red;
+			}
+			strong{
+				font-size: 20px;
+			}
+			.div{
+				width: 24px;
+				height: 24px;
+				float: left;
+				background: url(png/star1.png)  no-repeat center center;
+				margin-top: -9px;
+				padding: 5px;
+			}
+			.div:hover{
+				cursor: pointer;
+			}
+		#span{
+			float: left;
+		}
+		#prompt {
+			margin-left: 20px;
+		}
+		a{
+			font-size: 12px;
+			margin-left: 20px;
+		}
+		#score{
+			color: red;
+			font-size: 16px;
+			margin-left: 20px;
+			display: none;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="span">
+			<span>*</span>
+			<strong>总体评分:</strong>
+		</div>
+		<div class="div"></div>
+		<div class="div"></div>
+		<div class="div"></div>
+		<div class="div"></div>
+		<div class="div"></div>
+		
+		<strong id="score">很差</strong>
+	</body>
+	<script type="text/javascript">
+		var oDiv = document.getElementsByClassName('div');
+		var oScore = document.getElementById('score');
+		var star1='png/star1.png';
+		var star2='png/star2.png';
+		var star3='png/star3.png';
+		//设定一个N 替换成所点击评分的下标，；鼠标移出的时候判断点击的是谁。然后改变所在以下（包含）的背景图片
+		var n ;
+		//给每个评分添加事件
+		for(var i = 0;i<oDiv.length;i++){
+			oDiv[i].index=i;
+			//鼠标移入，产生背景图片和地址全部变化
+			oDiv[i].onmouseover=function(){
+				get(this.index,'no')
+			}
+			//鼠标移出，背景图片和背景文字全部变化
+			oDiv[i].onmouseout=function(){
+				out();
+			}
+			//鼠标点击，背景图片和文字产生变化
+			oDiv[i].onclick=function(){
+				get(this.index,'no');
+				n=this.index;//N赋值。
+			}
+		}
+		//鼠标移入和点击
+		function get(index,out){
+			//鼠标移入或者点击，显示该评分的信息
+			if(out=='no'){
+				//index :点击的下标   star2:评分背景图片地址
+				switch(index){
+					case 0:color(index,star2,'很差');
+					break;
+					case 1:color(index,star2,'较差');
+					break;
+					case 2:color(index,star3,'还行');
+					break;
+					case 3:color(index,star3,'推荐');
+					break;
+					case 4:color(index,star3,'力荐');
+					break;
+				}
+			}
+		}
+		//鼠标移出
+		function out(){
+			//鼠标离开产生
+				var a = oDiv.length-1
+			//鼠标离开，先将所有评分改为原始状态
+				color(a,star1,'');
+			//如果单机选择的是第三级评分以下。则产生灰色评分
+				if(n<2 || n==null){
+					color(n,star2,'')
+			//如果点击的的第三级以上（包含）则调用方法，所点击的以下全部变为黄色评分
+				}else{
+					var text
+					if(n==2){//第三级的评分
+						 text ='还行'
+					}else if(n==3){//第四级的评分
+						 text='推荐'
+					}else if(n==4){//第五级的评分
+						text = '力荐'
+					}
+			//点击过后，鼠标移出，调用方法，使评分颜色和评分文字残生变化
+			//n:所点击的下标  star3：背景图片地址   text：评分文字信息
+					color(n,star3,text);
+				}
+			//如果没有点击，则评分文字不显示
+				if(n==null){
+					oScore.style.display='none'
+				}
+		}
+		function color(index,color,text){
+			//将全部背景返回原始状态
+			for(var j=0;j<oDiv.length;j++){
+						oDiv[j].style.background='url('+star1+')  no-repeat -4.5px';
+				}
+			//所点击的评分，从第一个开始到所点击的，全部产生背景图片变化
+			for(var j=0;j<=index;j++){
+						oDiv[j].style.background='url('+color+')  no-repeat -4.5px';
+				};
+			//评分文字显示
+				oScore.style.display='block'
+			//评分文字替换
+				oScore.innerHTML=text
+		}
+	</script>
+</html>
