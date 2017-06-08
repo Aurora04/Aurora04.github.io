@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul{
+				list-style: none;
+			}
+			a:hover{
+				cursor: pointer;
+			}
+			body{
+				margin: 0;
+			}
+			#top{
+				position: relative;
+				width: 100%;
+				height: 1008px;
+				background: url(zhifubao/01.jpg);
+				background-size: 100% 100%;
+				overflow: hidden;
+			}
+			#center{
+				width: 682px;
+				height: 183px;
+				background: url(zhifubao/04.jpg);
+				position: absolute;
+				top:25%;
+				left: 32%;
+			}
+			#text{
+				display: flex;
+				z-index: 1;
+				width: 650px;
+				height: 50px;
+				position: absolute;
+				left: 32%;
+				top: 50%;
+			}
+			.text{
+				margin: auto auto;
+				width: 30%;
+				height: 100%;
+				background: #10A3E7;
+				border-radius: 7px;
+				text-align: center;
+				line-height: 50px;
+				color: white;
+			}
+			#bu{
+				width:32%;
+				margin: 0 4px;
+				background: #10A3E7;
+				border-radius: 7px;
+				height: 100px;
+				margin-top: -25px;
+				color: white;
+				text-align: center;
+				line-height: 100%;
+				color: white;
+				display: none;
+			}
+			hr{}
+		</style>
+
+	</head>
+	<body>
+		<div id="top">
+			<div id="center">
+				<!--<img src="img/zhifubao/04.jpg" />-->
+			</div>
+			<ul id="text">
+				<li class="text">
+					<a>我是合作伙伴</a>
+				</li>
+				<li class="text"><a>我是商家用户</a></li>
+				<li id="bu">
+					<p><a>我是支付宝商家</a></p>
+					<hr width="90%" color="white"/>
+					<p><a>我是口碑商家</a></p>
+					
+				</li>
+				<li class="text"><a>我是个人用户</a></li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript">
+		var oText = document.getElementsByClassName('text');
+		var oBu= document.getElementById('bu');
+		var oTop =document.getElementById('top');
+		var attr = ['zhifubao/01.jpg',
+					'zhifubao/02.jpg',
+					'zhifubao/03.jpg'
+					]
+		var num=1
+			window.onload=function(){
+				setInterval(function(){
+//					$("#top").fadeIn(2000,"linear");
+					oTop.style.background='url('+attr[num]+')';
+					oTop.style.backgroundSize='100% 100%';
+					if(num<attr.length-1){
+						num++
+					}else{
+						num=0;
+					}
+//					$("#top").fadeOut(2000,"linear");
+				},4000)
+			}
+		
+		oText[1].onmouseover=function(){
+				this.style.display='none';
+				oBu.style.display='block';
+		}
+		oBu.onmouseleave=function(){
+			oText[1].style.display='block';
+				this.style.display='none';
+		}
+		
+		function out(){
+			$("#top").fadeOut(2000);
+		}
+	</script>
+</html>
