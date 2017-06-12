@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#top {
+				width: 600px;
+				height: 400px;
+				border: 1px solid red;
+				list-style: none;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.top_1 {
+				width: 100%;
+				height: 100%;
+				float: left;
+				position: absolute;
+				left: 0;
+			}
+			
+			.top_2 {
+				width: 100%;
+				height: 100%;
+				float: left;
+				/*background: burlywood;*/
+				position: absolute;
+				left: 610px;
+			}
+			
+			li div {
+				width: 100%;
+				height: 60px;
+				background: black;
+				position: absolute;
+				bottom: -60px;
+				opacity: 0;
+				color: white;
+			}
+			
+			li div a {
+				opacity: 1;
+			}
+			
+			.top_1 div {
+				display: block;
+				opacity: 0.5;
+				bottom: 0px;
+			}
+		</style>
+	</head>
+	<!--
+	图片轮换功能
+	设置两个LI 内装入 图片和 装文字介绍的DIV 
+	当图片移动的时候 两个LI 一起移动
+	当TOP_1 移动到-600PX 的时候 top_1 的位置改到600PX 
+	这样 top_2 的 位置就是0px
+	然后将第一个LI(top_1) 和第二个LI(top_2) 的ID 替换， 
+	这样他们的位置 就跟原来初始一样了（第一个在0PX  第二个在600PX） 
+	然后再根据 id（0px 的为 top_1；600px的为top_2） 再次进行移动
+	
+-->
+
+	<body>
+		<div id="top">
+			<!--手动调试前台 再测试-->
+			<!--<li id="top_1" class="top_1">
+				<img id="img1" src="img/01.jpg" width="100%" height="100%" />
+				<div><a>sadas</a></div>
+			</li>
+			<li id="top_2" class="top_2">
+				<img id="img2" src="img/02.jpg" width="100%" height="100%" />
+				<div><a>yuioytiut</a></div>
+			</li>-->
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/myJQuery.js"></script>
+	<script type="text/javascript">
+		/**
+		 * oLi :获取标签LI
+		 * top ：获取ID 为top_1 的标签
+		 * num ：初始为1；当已经轮换了一次图片的时候，
+		 * 		num ++；当num%2==0 的时候也就是第二个走到0px 第一个到600PX 的时候
+		 * 		更改li 的ID
+		 * arra：设定数组。后台传输图片路径和 图片信息
+		 */
+		var oLi = document.getElementsByTagName('li');
+		var top = document.getElementById('top_1')
+		var num = 1;
+		var arra = [{
+				'ImgSrc': 'img/01.jpg',
+				'text': '图片信息一'
+			},
+			{
+				'ImgSrc': 'img/02.jpg',
+				'text': '图片信息二'
+			},
+			{
+				'ImgSrc': 'img/03.jpg',
+				'text': '图片信息三'
+			},
+			{
+				'ImgSrc': 'img/04.jpg',
+				'text': '图片信息四'
+			},
+		]
+
+		//自动添加两个LI 并且两个LI 都有分别有图片和图片信息
+		for(var i = 0; i < 1; i++) {
+			$('top').innerHTML += '<li id="top_1" class="top_1">' +
+				'<img id="img1" src="' + arra[0].ImgSrc + '" width="100%" height="100%" />' +
+				'<div><a>' + arra[0].text + '</a></div>' +
+				'</li>'
+			$('top').innerHTML += '<li id="top_2" class="top_2">' +
+				'<img id="img1" src="' + arra[1].ImgSrc + '" width="100%" height="100%" />' +
+				'<div><a>' + arra[1].text + '</a></div>' +
+				'</li>'
+		}
+		//获取到第一个LI 里面的DIV（装图片信息的容器）
+		var top_1Div = oLi[0].getElementsByTagName('div')[0];
+		//从数组里面为1 的下标。以后走一个图片 下一个图片的下标就 加一  
+		//当超过数组长度 则 arralen为0
+		//已经初始化了两张图片，也就是数组里面要从第三张开始轮换走
+		var arraLen = 1;
+		//页面加载过后当过 三秒 后执行 当前初始显示的图片信息。
+		//当图片信息 执行完毕后再执行图片的移动
+		// 图片信息进行 向下移动 和逐渐隐藏
+		window.onload = function() {
+			setTimeout(dd, 3000)
+		}
+		//初始化的图片信息，图片信息向下 移动到-60PX，同时隐藏度逐渐变为0；
+		//当移动到-60PX 的时候则开始移动图片
+		function dd() {
+			property(top_1Div, 'bottom', -10, -60, function() {
+				bb();
+			});
+			opacity(top_1Div, -0.03, 0);
+		}
+		//将ID 为top_1(也就是第一个图片)移动到-600PX 
+		//同时将 ID 为top_2（也就是第二个图片） 移动到0PX
+		//当top_2 移动到0PX 的时候 调用图片信息， 往上移动，并逐渐显示
+		function bb() {
+			property($('top_1'), 'left', -10, -600, function() {});
+			property($('top_2'), 'left', -10, 0, function() {
+				aa()
+			})
+		}
+		//当top_2移动到0PX 的时候 也就相当于他是第一个图片了。 
+		//而原来的top_1 也就相当于第二个图片
+		//然后将原来（top_2）的ID 改成top_1（这样他的left 就跟CSS里面初始化的一样————0px）
+		//将原来的top_1的ID 改成top_2 这样他 的left 也跟原来CSS 里面的一样了
+		function aa() {
+			//num++ 
+			num++;
+			//将原来top_1的图片移动到610PX
+			$('top_1').style.left = 610 + 'px'
+			//因为初始化的num 为1  然后num++ 
+			//这里第一次num 就为0了
+			//然后就将原来的top_1 （第一个li）的ID 改成top_2
+			//将原来的top_2（第二个LI）的ID 改成top_1
+			//top_1 也就是现在显示的图片
+			if(num % 2 == 0) {
+				oLi[0].id = 'top_2'
+				oLi[1].id = 'top_1';
+				//这里获取到ID 为top_1 的DIV  装图片信息的容器
+				top_1Div = oLi[1].getElementsByTagName('div')[0];
+				//当再次进来的时候 num 就为三 了 也就是单数了
+				//再次进行ID 的更改
+			} else {
+				oLi[0].id = 'top_1'
+				oLi[1].id = 'top_2';
+				//这里获取到ID 为top_1 的DIV  装图片信息的容器
+				top_1Div = oLi[0].getElementsByTagName('div')[0];
+			}
+			//top_1 也就是现在显示的图片
+			//根据获取到 当前显示的图片的图片信息逐渐上移 显示
+			property(top_1Div, 'bottom', 10, 0, function() {});
+			opacity(top_1Div, 0.03, 0.5);
+			//隔三秒过后调用 更换top_2的图片和图片信息，
+			//top_2未显示，位置在610px
+			setTimeout(cc, 3000)
+		}
+		//已经初始化了两张图片，也就是数组里面要从第三张开始轮换走
+		function cc() {
+			arraLen += 1;
+			//当arraLen 大于了数组长度 则 从头开始显示
+			if(arraLen > arra.length - 1) {
+				arraLen = 0
+			}
+			/**
+			 * top2_img：top_2的图片
+			 * top2_a：top_2的图片信息
+			 */
+			var top2_img = $('top_2').getElementsByTagName('img')[0];
+			var top2_a = $('top_2').getElementsByTagName('a')[0];
+			//更改top_2的图片和图片信息 
+			//然后将已显示的图片信息 下移 消失
+			//最后再次调用 图片轮换
+			top2_img.src = arra[arraLen].ImgSrc
+			top2_a.innerHTML = arra[arraLen].text
+			//已显示的图片信息进行操作
+			opacity(top_1Div, -0.03, 0);
+			property(top_1Div, 'bottom', -10, -60, function() {});
+			bb()
+		}
+	</script>
+
+</html>
