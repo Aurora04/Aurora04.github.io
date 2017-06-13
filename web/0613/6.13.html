@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#top{
+				width: 700px;
+				height:900px;
+				border: 1px solid red;
+			}
+			h3{
+				margin-top: 5px;
+				margin-bottom: 0px;
+			}
+			#shop{
+				width: 100%;
+				height: 260px;
+			
+				
+				}
+			#aa{
+				background: url(img/03.jpg);
+				background-size: 100% 100%;
+				width: 24%;
+				height: 100%;
+				display: inline-block;
+			}
+			.tbox{
+				background: white;
+				width: 100%;
+				height: 100%;
+				border: 1px solid white;
+				box-sizing: border-box;
+				float: left;
+				overflow: hidden;
+				padding: 5px;
+				position: relative;
+				left: 0;
+				top: 0;
+			}
+			.tbox input:nth-of-type(1){
+				width: 65%;
+				background: #DED6E7;
+				border:0px;
+				color: black;
+			}
+			.tbox button{
+				border: 0;
+				font-weight: 900;
+				background: white;
+				font-size: 12px;
+				color: #4A2433;
+			}
+			.tbox input:nth-of-type(2){
+				width: 100%;
+				border:0px;
+				color: #a0a0a4;
+				font-size: 14px;
+				font-weight: 800;
+				position: relative;
+				top: 8px;
+				left: 0;
+			}
+			.tbox img{
+				margin-top: 15px;
+			}
+			.tbox p{
+				font-size: 13px;
+			}
+			.tbox strong{
+				color: #BDADBD;
+				font-size: 13px;
+			}
+			#close{
+				width: 100%;
+				height: 35px;
+				background:#DED6E7 ;
+				list-style: none;
+			}
+			#close li{
+				float: left;
+				margin: 0px 60px;
+				font-weight: 900;
+				text-align: center;
+				line-height: 35px;
+			}
+			.messa{
+				width: 100%;
+				height: 70px;
+				background:#DED6E7 ;
+				position: relative;
+				top: 5px;
+				list-style: none;
+			}
+			.messa li{
+				float: left;
+				width: 33%;
+				height: 20px;
+				margin-top: 30px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				word-break: keep-all;
+			}
+			.messa li:nth-of-type(2){
+				margin-left: 20px;
+			}
+			.messa li:nth-of-type(3){
+				width: 110px;
+				height: 60px;
+				margin-left: -50px;
+				margin-top: 5px;
+				border: 1px solid black;
+			}
+			.messa li:nth-of-type(3) img{
+				width: 110px;
+			}
+			.close_1{
+				margin-bottom: 30px;
+			}
+			.close_1 div{
+				margin-top: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="top">
+			<h3>限购时间</h3>
+			<hr width="98%" size="3" color="#A0A0A4"/>
+			<div id="shop">
+				<!--<div id="aa">
+					<div class="tbox">
+						<input class="dist" id="dist" value="Jun 13,2017 16:14:30" />:<button class="butt">确定</button>
+						<input class="reset" id="reset" value="剩余00天00时00分00秒" />
+						<img src="img/01.jpg" width="100%" height="30%" />
+						<p>疯狂599，美的爆款隐藏式面板下拉门微波炉</p>
+						<strong>抢购价：<a style="color: #A52139;">￥599.00</a></strong>
+					</div>
+				</div>
+					<div id="aa">
+					<div class="tbox">
+						<input class="dist" id="dist" value="Jun 13,2017 16:14:30" />:
+						<button class="butt">确定</button>
+						<input class="reset" id="reset" value="剩余00天00时00分00秒" />
+						<img src="img/02.jpg" width="100%" height="30%" />
+						<p>疯狂599，撒旦发生的发生发生放大放大时</p>
+						<strong>抢购价：<a style="color: #A52139;">￥45456.00</a></strong>
+					</div>
+				</div>
+				<div id="aa">
+					<div class="tbox">
+					</div>
+				</div>
+				<div id="aa">
+					<div class="tbox">
+					</div>
+				</div>			-->
+								
+			</div>
+			<div id="close">
+					<li>商品名称</li>
+					<li>价钱</li>
+			</div>
+			<div class="close_1">
+					<!--<div class="messa">
+						<li>疯狂599，美的爆款隐藏式面板下拉门微波炉</li>
+						<li>599.00</li>
+						<li><img src="img/01.jpg"/></li>
+					</div>
+					<div class="messa">
+						<li>疯狂599，美的爆款隐藏式面板下拉门微波炉</li>
+						<li>599.00</li>
+						<li><img src="img/01.jpg"/></li>
+					</div>-->
+			</div>
+			<b style="">总价：<strong class="total" style="color:#A52139;">00.00</strong>元</b>
+		</div>
+	</body>
+		<script type="text/javascript" src="js/myJQuery.js" ></script>
+		<script>
+			var oShop= document.getElementById('shop');
+			//建立限购商品信息数组
+			var arra=[
+					[
+						{"endTime":"Jun 15,2017 18:18:50"},
+						{"imgSrc":"img/01.jpg"},
+						{"messege":"疯狂599，美的爆款隐藏式面板下拉门微波炉"},
+						{"price":"￥45456.00"},
+					],[
+						{"endTime":"Jun 14,2017 18:18:55"},
+						{"imgSrc":"img/02.jpg"},
+						{"messege":"疯狂599，美的爆款隐藏式面板下拉门微波炉"},
+						{"price":"￥3299.00"},
+					],[
+						{"endTime":"Jun 14,2017 18:18:55"},
+						{"imgSrc":"img/03.jpg"},
+						{"messege":"疯狂599，美的爆款隐藏式面板下拉门微波炉"},
+						{"price":"￥1.00"},
+					],[
+						{"endTime":"Jun 13,2017 12:18:30"},
+						{"imgSrc":"img/04.jpg"},
+						{"messege":"疯狂599，美的爆款隐藏式面板下拉门微波炉"},
+						{"price":"￥168.00"},
+					]
+			]
+			for(var i =0;i<arra.length;i++){
+						oShop.innerHTML+='<div id="aa">'
+								+'<div class="tbox">'
+								+'<input class="dist" id="dist" value="'+arra[i][0].endTime+'" />:'
+								+'<button class="butt">确定</button>'
+								+'<input class="reset" id="reset" value="剩余00天00时00分00秒" />'
+								+'<img src="'+arra[i][1].imgSrc+'" width="100%" height="30%" />'
+								+'<p>'+arra[i][2].messege+'</p>'
+								+'<strong>抢购价：<a style="color: #A52139;">'+arra[i][3].price+'</a></strong>'
+								+'</div></div>'
+				
+			}
+			
+			//确定按钮
+			var oButt=document.getElementsByClassName('butt');
+			//装信息的剩余DIV
+			var oTbox=document.getElementsByClassName('tbox');
+			//下方显示的商品信息
+			var oClose_1=document.getElementsByClassName('close_1')[0];
+			//总价
+			var oTotal=document.getElementsByClassName('total')[0];
+			//总价初始价格
+			var money=0;
+			for(var i=0;i<oButt.length;i++){
+				oButt[i].index=i
+				oButt[i].onclick=function(){
+					down(this.index);
+				}
+			}
+			
+			function down(index){
+				//输入时间
+				var oDist = oTbox[index].getElementsByClassName('dist')[0];
+				//剩余时间
+				var oReset = oTbox[index].getElementsByClassName('reset')[0];
+				//获取当前点击外层DIV 的图片、信息、价格
+				var oImgSrc=oTbox[index].getElementsByTagName('img')[0].src;
+				var oPtext=oTbox[index].getElementsByTagName('p')[0].innerHTML;
+				var oPa=oTbox[index].getElementsByTagName('a')[0].innerHTML;
+				var endDate= new Date(oDist.value)
+				//声明自定义属性。防止多次抖动
+				oTbox[index].s=true;
+				if(endDate=='Invalid Date'){
+					alert('请输入正确的时间格式，例：Jun 12,2017 18:00:00')
+					return;
+				}
+				//倒计时
+				var time =setInterval(function(){
+				var nowDate = new Date();
+				if(endDate-nowDate<=0){
+					//当时间到了，左边抖动
+					shake(oTbox[index],'left',function(){
+						//抖动完了过后往下移，并且慢慢消失
+						property(oTbox[index],'top',10,270);
+						opacity(oTbox[index],-0.01,0,function(){
+							oClose_1.innerHTML+='<div class="messa">'
+											+'<li>'+oPtext+'</li>'
+											+'<li>'+oPa+'</li>'
+											+'<li><img src="'+oImgSrc+'"/></li>'
+											+'</div>';
+								//转换得到的抢购价
+								var Buying  = 0;	
+								for(var i=1;i<oPa.length;i++){
+									Buying +=oPa.charAt(i)
+								}
+								money+=	parseFloat(Buying );
+								oTotal.innerHTML=money
+						})
+					})
+					clearInterval(time);
+					return;
+				}
+				//秒
+				var Ms=Math.floor((endDate-nowDate)/1000)
+				//天
+				var Day= Math.floor(Ms/86400)
+				//时
+				var Hours= Math.floor(Ms%86400/3600)
+				//不满一小时的分
+				var Minute= Math.floor(Ms%86400%3600/60)
+				//不满一分钟的秒
+				var s =Math.floor(Ms%60);
+				var Str ='剩余'+dat(Day)+'天'+dat(Hours)+'时'+dat(Minute)+'分'+dat(s)+'秒';
+				oReset.value=Str
+				},1000)
+		}
+		function dat(n){
+			var m= n;
+			n<10?m='0'+n:m=n
+			return m;
+		}
+			
+		</script>
+</html>
