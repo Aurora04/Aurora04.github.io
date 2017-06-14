@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#left,#right{
+				width: 200px;
+				height: 300px;
+				border: 1px solid black;
+				overflow: auto;
+			}
+			
+			#top{
+				height: 400px;
+			}
+			#top div{
+				float: left;
+				
+			}
+			#center{
+				width: 150px;
+				height: 300px;
+				position: relative;
+			}
+			.center_1{
+				width: 100%;
+				height: 150px;
+				position: absolute;
+				top: 60px;
+				text-align: center;
+			}
+			#aa{
+				width: 120px;
+				height: 35px;
+				margin-left: 25px;
+				overflow: hidden;
+				display: none;
+			}
+			.aa{
+				width: 15%;
+				height: 30px;
+				background:  #FF8A3A;
+				margin-left: 2px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="top">
+			<div id="left">撒到发疯的士大夫萨芬的说法，萨芬撒旦法，士大夫撒发放，萨法防守对方，撒地方撒发放的，大夫撒地方，safsaddfsa
+			</div>
+			<div id="center">
+				<div class="center_1">
+					<button id="butt">开始搬运</button>
+					<p></p>
+					<strong>
+						<a id="residue">0</a>
+						/
+						<a  id="count">0</a>
+					</strong>
+					<p></p>
+					<div id="aa">
+						<div class="aa"></div>
+						<div class="aa"></div>
+						<div class="aa"></div>
+						<div class="aa"></div>
+						<div class="aa"></div>
+					</div>
+				</div>
+			</div>
+			<div id="right">
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/myJQuery.js" ></script>
+	<script type="text/javascript">
+		var oAa= $('aa').getElementsByClassName('aa');
+		var oLeft= $('left').innerHTML;
+		var i=0;//定义从哪里开始文字截取
+		var num=0;//进度条滚动
+		$('butt').onclick=function(){
+			//点击过后显示滚动条
+			$('aa').style.display='block'
+			//总的数字个数
+			$('count').innerHTML=oLeft.length
+			var time = setInterval(function(){
+				//执行一次获取已截取过后剩下的文字
+				var leftStr=oLeft.substring(i);
+				//将剩下的文字覆盖到左边DIV
+				$('left').innerHTML=leftStr;
+				//获取剩余的文字个数
+				$('residue').innerHTML=$('left').innerHTML.length
+				//当I增加到左边文字个数的时候停止
+				if(i>oLeft.length-1){
+					$('aa').style.display='none'
+					alert('搬运完毕')
+					clearInterval(time);
+					return;
+				}
+				//当进度条滚到最后一个 则从头开始
+				if(num>oAa.length-1){
+					num=0;
+				}
+				//清除全部进度条
+				for(var j = 0;j<oAa.length;j++){
+					oAa[j].style.background=' #FF8A3A';
+				}
+				//赋给当前进度条颜色
+				oAa[num].style.background='#FF0000';
+				
+				//获取到从I开始 获取一个文字，添加都右边IDV
+				$('right').innerHTML+=oLeft.substring(i,i+1)
+				i++;
+				num++;
+			},100);
+		}
+	</script>
+</html>
