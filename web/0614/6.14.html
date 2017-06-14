@@ -47,7 +47,8 @@
 	</head>
 	<body>
 		<div id="top">
-			<div id="left">撒到发疯的士大夫萨芬的说法，萨芬撒旦法，士大夫撒发放，萨法防守对方，撒地方撒发放的，大夫撒地方，safsaddfsa</div>
+			<div id="left">撒到发疯的士大夫萨芬的说法，萨芬撒旦法，士大夫撒发放，萨法防守对方，撒地方撒发放的，大夫撒地方，safsaddfsa
+			</div>
 			<div id="center">
 				<div class="center_1">
 					<button id="butt">开始搬运</button>
@@ -58,6 +59,8 @@
 						<a  id="count">0</a>
 					</strong>
 					<p></p>
+					<button id="butt1">反搬运</button>
+					<p></p>
 					<div id="aa">
 						<div class="aa"></div>
 						<div class="aa"></div>
@@ -67,30 +70,44 @@
 					</div>
 				</div>
 			</div>
-			<div id="right">
-			</div>
+			<div id="right"></div>
 		</div>
 	</body>
 	<script type="text/javascript" src="js/myJQuery.js" ></script>
 	<script type="text/javascript">
 		var oAa= $('aa').getElementsByClassName('aa');
-		var oLeft= $('left').innerHTML;
+		var oLeft=''
+		var oRight=''
+		var time=null
 		var i=0;//定义从哪里开始文字截取
 		var num=0;//进度条滚动
 		$('butt').onclick=function(){
-			//点击过后显示滚动条
+			oLeft= $('left').innerHTML;
+				carry('left','right',oLeft)
+		}
+		$('butt1').onclick=function(){
+			oRight= $('right').innerHTML;
+			
+				carry('right','left',oRight);
+		}
+		
+		function carry(obj,oldObj,aa){
+			clearInterval(time);//如果开始搬运还没完，就点击反搬运，先清除定时器
+			i=0;
+			num=0;
+			//滚动条
 			$('aa').style.display='block'
 			//总的数字个数
-			$('count').innerHTML=oLeft.length
-			var time = setInterval(function(){
+			$('count').innerHTML=aa.length
+			time = setInterval(function(){
 				//执行一次获取已截取过后剩下的文字
-				var leftStr=oLeft.substring(i);
-				//将剩下的文字覆盖到左边DIV
-				$('left').innerHTML=leftStr;
+				var leftStr=aa.substring(i);
+				//将剩下的文字覆盖到现在的DIV
+				$(obj).innerHTML=leftStr;
 				//获取剩余的文字个数
-				$('residue').innerHTML=$('left').innerHTML.length
+				$('residue').innerHTML=$(obj).innerHTML.length
 				//当I增加到左边文字个数的时候停止
-				if(i>oLeft.length-1){
+				if(i>aa.length-1){
 					$('aa').style.display='none'
 					alert('搬运完毕')
 					clearInterval(time);
@@ -108,10 +125,11 @@
 				oAa[num].style.background='#FF0000';
 				
 				//获取到从I开始 获取一个文字，添加都右边IDV
-				$('right').innerHTML+=oLeft.substring(i,i+1)
+				$(oldObj).innerHTML+=oLeft.substring(i,i+1)
 				i++;
 				num++;
 			},100);
+		
 		}
 	</script>
 </html>
