@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+		<script type="text/javascript" src="js/mui.min.js" ></script>
+		<script type="text/javascript" src="js/myJQuery.js" ></script>
+		<style type="text/css">
+			#top{
+				width: 400px;
+				height: 600px;
+				border: 1px solid darkgray;
+				overflow: hidden;
+				position: relative;
+				background: cornsilk;
+				margin: auto;
+			}
+			#list{
+				position: absolute;
+				bottom: 260px;
+				left: 0;
+				background: cornsilk;
+				transition: bottom 1s;
+			}
+			#stro{
+				display: inline-block;
+				width: 100%;
+				height: 20px;
+				text-align: center;
+			}
+			#p{
+				display: inline-block;
+				width: 100%;
+				height: 20px;
+				text-align: center;
+				font-size: 12px;
+			}
+			.opc{
+					opacity: 0;
+				transition: opacity 1s; 
+					
+			}
+			#head{
+				width: 50px;
+				height: 50px;
+				border: 1px solid darkgray;
+				margin: auto;
+				margin-top: 30px;
+				border-radius: 50px;
+				overflow: hidden;
+				transition: width 1s,height 1s;
+			}
+			#head img{
+				width: 100%;
+				height: 100%;
+			}
+			#route{
+				padding: 0;
+				margin-top: 30px;
+				width:100%;
+				height: 350px;
+				list-style: none;
+			}
+			#route li{
+				padding: 10px;
+				font-size: 18px;
+			}
+			#route li:nth-child(odd){
+				background: wheat;
+			}
+			#top ul.active{
+				bottom: -120px;
+			}
+			#jiantou{
+				margin: auto;
+				width: 5px;
+				height: 5px;
+				border-width: 5px;
+				border-style: solid;
+				border-color: transparent transparent gray transparent;
+				-webkit-transform: rotate(180deg);
+			}
+			#jiantou.jiantou-1{
+				-webkit-transform:rotate(0deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="top">
+			<div id="head">
+				<img src="img/01.jpg"/>
+			</div>
+			<strong id="stro" class="opc">Yooye</strong>
+			<p id="p" class="opc">普通会员</p>
+			<ul id="route" class="opc" >
+				<li>行程</li>
+				<li>钱包</li>
+				<li>客服</li>
+				<li>设置</li>
+			</ul>
+			<ul id="list" class="mui-table-view mui-grid-view mui-grid-9">
+				<div id="jiantou"></div>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+				    <a href="#">
+				        <span class="mui-icon mui-icon-home"></span>
+				        <div class="mui-media-body">Home</div>
+				    </a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+				    <a href="#">
+				        <span class="mui-icon mui-icon-email"><span class="mui-badge mui-badge-red">5</span></span>
+				        <div class="mui-media-body">Email</div>
+				    </a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+				    <a href="#">
+				        <span class="mui-icon mui-icon-chatbubble"></span>
+				        <div class="mui-media-body">Chat</div>
+				    </a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+				    <a href="#">
+				        <span class="mui-icon mui-icon-location"></span>
+				        <div class="mui-media-body">Location</div>
+				    </a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+				    <a href="#">
+				        <span class="mui-icon mui-icon-search"></span>
+				        <div class="mui-media-body">Search</div>
+				    </a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+				    <a href="#">
+				        <span class="mui-icon mui-icon-phone"></span>
+				        <div class="mui-media-body">Phone</div>
+				    </a>
+				</li><li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+				    <a href="#">
+				        <span class="mui-icon mui-icon-phone"></span>
+				        <div class="mui-media-body">Phone</div>
+				    </a>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script>
+		var oPoc= document.getElementsByClassName('opc');
+		var num = true;
+		$('top').onclick=function(){
+			if(num){
+				$('list').className='mui-table-view mui-grid-view mui-grid-9 active';
+				$('jiantou').className='jiantou-1';
+				for(var i =0;i<oPoc.length;i++){
+					oPoc[i].style.opacity=1;
+				}
+				$('head').style.width=80+'px';
+				$('head').style.height=80+'px';
+			}else{
+				$('jiantou').className='';
+				$('list').className='mui-table-view mui-grid-view mui-grid-9';
+				for(var i =0;i<oPoc.length;i++){
+					oPoc[i].style.opacity=0;
+				}
+				$('head').style.width=50+'px';
+				$('head').style.height=50+'px';
+			}
+			num=!num
+		}
+	</script>
+</html>
