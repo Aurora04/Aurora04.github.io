@@ -123,6 +123,14 @@
 					-webkit-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
 				}
 			}
+			@-webkit-keyframes min{
+				from{
+					-webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+				}
+				to{
+					-webkit-transform:rotateY(360deg)
+				}
+			}
 		</style>
 	</head>
 	<body>
@@ -146,10 +154,10 @@
 	<script type="text/javascript" src="js/myJQuery.js" ></script>
 	<script>
 		$('top').onclick=function(){
-			$('top').style.webkitAnimationPlayState='paused'
+			$('top').style.webkitAnimation='min 8s linear infinite alternate'
 		}
 		$('top').onmouseleave=function(){
-			$('top').style.webkitAnimationPlayState=''
+			$('top').style.webkitAnimation='move 8s linear infinite alternate'
 		}
 	</script>
 </html>
