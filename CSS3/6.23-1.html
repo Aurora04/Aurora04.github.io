@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#cont{
+				width: 600px;
+				height: 200px;
+				position: relative;
+			}
+			#top{
+				width: 400px;
+				height: 200px;
+				position: absolute;
+				top: 0px;
+				left: 100px;
+				-webkit-perspective: 4000px;
+				-webkit-transform-style: preserve-3d;
+				-webkit-transform-origin: bottom;
+				position:relative;
+			}
+			#left{
+				width: 50px;
+				height: 50px;
+				position: absolute;
+				border-radius: 50%;
+				top: 50px;
+				left: 40px;
+				text-align: center;
+				line-height: 50px;
+				box-shadow:0px 0px  5px 5px #B1B1B2;
+			}
+			#right{
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				box-shadow:0px 0px  5px 5px #B1B1B2;
+				text-align: center;
+				line-height: 50px;
+				position: absolute;
+				top: 50px;
+				left: 510px;
+			}
+			img{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				-webkit-transform-origin: bottom;
+			}
+			@-webkit-keyframes up{
+				0%{
+					-webkit-transform: rotateX(180deg);
+					opacity: 0;
+				}
+				70%{
+					-webkit-transform: rotateX(-20deg);
+				}
+				80%{
+					-webkit-transform: rotateX(10deg);
+				}
+				90%{
+					-webkit-transform: rotateX(-10deg);
+				}
+				100%{
+					-webkit-transform: rotateX(0deg);
+					opacity: 1;
+				}
+			}
+			@-webkit-keyframes down{
+				0%{
+					-webkit-transform: rotateX(0deg);
+					opacity: 1;
+				}
+				100%{
+					-webkit-transform: rotateX(180deg);
+					opacity: 0;
+				}
+			}
+			img:nth-child(2){
+				-webkit-transform: rotateX(-180deg);
+				opacity: 0;
+			}
+			img:nth-child(3){
+				-webkit-transform: rotateX(-180deg);
+				opacity: 0;
+				
+			}
+			img:nth-child(4){
+				-webkit-transform: rotateX(-180deg);
+				opacity: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="cont">
+				<div id="left">
+						<strong>前</strong>
+				</div>
+				<div id="top">
+					<img src="img/04.jpg"/>
+					<img src="img/01.jpg"/>
+					<img src="img/02.jpg"/>
+					<img src="img/03.jpg"/>
+				</div>
+				<div id="right">
+					<strong>后</strong>
+				</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/myJQuery.js" ></script>
+	<script type="text/javascript">
+		var oImg = document.getElementsByTagName('img');
+		var imgLen = oImg.length;
+		var fond = 0;
+		$('left').onclick=function(){
+			oImg[fond].style.WebkitAnimation='down 1s linear forwards'
+			fond++
+			if(fond>imgLen-1){
+				fond=0
+			}
+			oImg[fond].style.WebkitAnimation='up 1s linear forwards'
+		}
+		$('right').onclick=function(){
+			oImg[fond].style.WebkitAnimation='down 1s linear forwards'
+			fond--
+			if(fond<0){
+				fond=imgLen-1
+			}
+			oImg[fond].style.WebkitAnimation='up 1s linear forwards'
+		}
+	</script>
+	
+</html>
