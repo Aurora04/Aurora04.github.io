@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#cont{
+				width: 600px;
+				height: 300px;
+				-webkit-transform-style: preserve-3d;
+				position: relative;
+				-moz-transform-origin:center center -150px;
+				-webkit-transform-origin-z:-150px;
+				transition: all 3s; 
+				margin-top: 200px;
+				margin-left: 100px;
+			}
+			#butt{
+				float: left;
+				margin-left: 100px;
+			}
+			
+			ul{
+				width: 10px;
+				height: 300px;
+				padding: 0;
+				list-style: none;
+				padding: 0;
+				-webkit-transform-style: preserve-3d;
+				-webkit-perspective: 0px;
+				-moz-transform-origin:center center -150px;
+				-webkit-transform-origin-z:-150px;
+				float: left;
+				margin-top: 0;
+				transition: all 1s; 
+				
+			}
+			li{
+				width: 10px;
+				height: 300px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-size: 600px 300px;
+			}
+			li:nth-child(1){
+				background-image: url(img/05.jpg);
+			}
+			li:nth-child(2){
+				background-image: url(img/0622/cat1.jpg);
+				-webkit-transform-origin: bottom;
+				-webkit-transform: translateY(-300px) rotateX(90deg);
+			}
+			li:nth-child(3){
+				background-image: url(img/0622/cat3.jpg);
+				-webkit-transform: translateZ(-300px) rotateX(180deg);
+			}
+			li:nth-child(4){
+				background-image: url(img/0622/cat6.jpg);
+				-webkit-transform-origin: top;
+				-webkit-transform: translateY(300px) rotateX(-90deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="cont">
+		</div>
+		<button id="butt">下一张</button>
+	</body>
+	<script type="text/javascript" src="js/myJQuery.js" ></script>
+	<script type="text/javascript">
+		var str = '';
+		for(var i =0;i<60;i++){
+			str+='<ul>'
+				+'<li style="background-position:-'+i*10+'px 0px"></li>'
+				+'<li style="background-position:-'+i*10+'px 0px"></li>'
+				+'<li style="background-position:-'+i*10+'px 0px"></li>'
+				+'<li style="background-position:-'+i*10+'px 0px"></li>'
+			+'</ul>';
+		}
+		$('cont').innerHTML=str;
+		var oUl = document.getElementsByTagName('ul')
+		var num =0;
+		var rote = 0;
+		$('butt').onclick=function(){
+			$('butt').disabled=true;
+			rote++;
+			var ti = setInterval(function(){
+				oUl[num].style.webkitTransform='rotateX(-'+rote*90+'deg)';
+				if(num<oUl.length-1){
+					num++
+				}else{
+					$('butt').disabled=false;
+					clearInterval(ti);
+					num=0
+				}
+			},50)
+		}
+		
+		
+	</script>
+	
+</html>
