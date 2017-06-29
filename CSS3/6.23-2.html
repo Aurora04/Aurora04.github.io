@@ -79,13 +79,14 @@
 			+'</ul>';
 		}
 		$('cont').innerHTML=str;
-		var oUl = document.getElementsByTagName('ul')
+		var oUl = document.getElementsByTagName('ul');
 		var num =0;
 		var rote = 0;
 		$('butt').onclick=function(){
 			$('butt').disabled=true;
 			rote++;
 			var ti = setInterval(function(){
+				
 				oUl[num].style.webkitTransform='rotateX(-'+rote*90+'deg)';
 				if(num<oUl.length-1){
 					num++

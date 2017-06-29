@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#cont{
+				height: 400px;
+				width: 10px;
+				background: greenyellow;
+				position: relative;
+				top: 0;
+				left: 0;
+				float: left;
+			}
+			#c{
+				width: 100%;
+				height: 60px;
+				background: pink;
+				position: absolute;
+				top: 0;left: 0;
+			}
+			#box{
+				float:left;
+				width: 200px;
+				height: 400px;
+				margin-left: 15px;
+				background: #808080;
+				color: white;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="cont">
+			<div id="c">
+			</div>
+		</div>
+		<div id="box">
+			<div id="box1">
+				 晋太元中， 武陵人捕鱼为业。 缘溪行， 忘路之远近。 忽逢桃花林， 夹岸数百步， 中无杂树， 芳草鲜美， 落英缤纷， 渔人甚异之。 复前行， 欲穷其林。
+				林尽水源， 便得一山， 山有小口， 仿佛若有光。 便舍船， 从口入。 初极狭， 才通人。 复行数十步， 豁然开朗。 土地平旷， 屋舍俨然， 有良田美池桑竹之属。 阡陌交通， 鸡犬相闻。 其中往来种作， 男女衣着， 悉如外人。 黄发垂髫， 并怡然自乐。
+				见渔人， 乃大惊， 问所从来。 具答之。 便要还家， 设酒杀鸡作食。 村中闻有此人， 咸来问讯。 自云先世避秦时乱， 率妻子邑人来此绝境， 不复出焉， 遂与外人间隔。 问今是何世， 乃不知有汉， 无论魏晋。 此人一一为具言所闻， 皆叹惋。 余人各复延至其家， 皆出酒食。 停数日， 辞去。 此中人语云： “不足为外人道也。”
+				既出， 得其船， 便扶向路， 处处志之。 及郡下， 诣太守， 说如此。 太守即遣人随其往， 寻向所志， 遂迷， 不复得路。
+				南阳刘子骥， 高尚士也， 闻之， 欣然规往。 未果， 寻病终， 后遂无问津者。 
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/myJQuery.js" ></script>
+	<script>
+		var cHeight = $('c').offsetHeight;//获取滚动条高度
+		var contHeight=$('cont').offsetHeight//滚动栏高度
+		var maxTop=contHeight-cHeight;//获取滚动的最大高度（滚动栏高度-滚动条高度）
+		//获取文本需要移动的的marginTop才能显示余下（文本的高度-盒子的高度=移动的高度）
+		var textTop =$('box1').scrollHeight-$('box').offsetHeight;
+		$('c').onmousedown=function(ev){
+			var cTop=$('c').offsetTop;
+			var newEv = ev || event;
+			var newClienY = newEv.clientY;//获取鼠标点下去的Y轴坐标
+			document.onmousemove=function(ev){
+				var newEv = ev||event;
+				var oldClienY = newEv.clientY;//鼠标移动的Y 轴坐标
+				var t  = oldClienY-newClienY;//鼠标移动的距离（滚动的距离）-鼠标移动相对于鼠标点下的Y轴的距离
+				//滚动条不能低于负 的以移动的滚动距离
+				if (t<-cTop){
+					t=-cTop
+					//滚动条不能大于剩下的滚动距离
+				}else if(t>maxTop-cTop){
+					t=maxTop-cTop;//滚动距离不能大于滚动栏-滚动条的距离
+				}
+				$('c').style.top=t+cTop+'px'
+				
+				//实际移动高度/总的高度 = 实际移动的TOP/文本总需要移动的TOP
+					//实际移动高度==（移动距离-点击时移动距离）
+				// 实际移动的TOP=（实际移动高度/总的高度）*文本总需要移动的TOP
+				//因为是向上移动 所以TOP 是减少 所以 是-（）
+				$('box1').style.marginTop=-((t+cTop)/maxTop)*textTop+'px'
+			}
+			document.onmouseup=function(){
+				this.onmousemove=null;
+			}
+			return false;
+		}
+//document.onmousewheel=function(){} 谷歌浏览器
+//document.addEventListener('DOMMouseScroll',function(){},false) 其他浏览器
+		document.onmousewheel=fn;
+		document.addEventListener('DOMMouseScroll',fn,false);
+		function fn(ev){
+			var newEv = ev || event;
+			var bool = true;
+			//判断在那个浏览器操作
+			if(newEv.wheelDelta){
+				newEv.wheelDelta>0? bool=false:bool=true;
+			}else{
+				newEv.detail<0? bool=false:bool=true;
+			}
+			var t=0;
+			//为true 就向下移动 
+			if(bool){
+				 t = $('c').offsetTop+10
+				if(t>maxTop){
+					t=maxTop
+				}
+			}else{
+				 t = $('c').offsetTop-10
+				if(t<0){
+					t=0
+				}
+			}
+			$('c').style.top=t+'px'
+			$('box1').style.marginTop=-(t/maxTop)*textTop+'px'
+			return false;
+		}
+		
+	</script>
+</html>
