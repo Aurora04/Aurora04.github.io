@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			button:hover{
+				cursor: pointer;
+			}
+			#top{
+				height: 600px;
+				width: 300px;
+				position: relative;
+			}
+			#tit{
+				width: 100%;
+				height: 40px;
+				background: white;
+				box-shadow: 0px 3px 3px 0px gainsboro;
+			}
+			#but{
+				height: 100%;
+				line-height: 40px;
+				text-decoration: none;
+				font-size: 18px;
+				position: absolute;
+				right: 3px;
+				top: 0;
+			}
+			#but1{
+				height: 100%;
+				line-height: 40px;
+				text-decoration: none;
+				font-size: 18px;
+				position: absolute;
+				right: 3px;
+				top: 34px;
+				display: none;
+			}
+			#card{
+				height: 100%;
+				line-height: 40px;
+				position: absolute;
+				left: 30%;
+				font-size: 21px;
+				font-weight: 600;
+			}
+			#left{
+				text-decoration: none;
+				height: 100%;
+				line-height: 40px;
+				position: absolute;
+				left: 3px;
+			}
+			.list{
+				display: inline-block;
+				list-style: none;
+				width: 100%;
+				height: 150px;
+				background: powderblue;
+				margin-top: 20px;
+				border-radius: 6px;	
+				color: white;			
+			}
+			.list li{
+				margin-left: 20px;
+				margin-top: 15px;
+			}
+			.list li:nth-child(3){
+				margin-left: 50px;
+			}
+			.list:nth-child(3){
+				background: pink;
+			}
+			.list:nth-child(4){
+				background: cornflowerblue;
+			}
+			.dele{
+				margin-left: 20px;
+				color: blue;
+				font-size: 17px;
+				margin-top: 10px;
+				border: 0;
+				background:0;
+				display: none;
+			}
+			#conf{
+				position: absolute;
+				top: -350px;
+				left: -150px;
+				border: 1px solid white;
+				width: 170px;
+				background: white;
+				margin: auto auto;
+				height: 100px;
+				border-radius: 10px;
+				position: relative;
+				text-align: center;
+				display: none;
+			}
+			#font{
+				display: block;
+				margin-top:20px;
+				font-size: 14px;				
+			}
+			#no{
+				color: white;
+				margin-left: 00px;
+				margin-top: 20px;
+				border: 0;
+				background: gainsboro;
+				width: 60px;
+				height: 30px;
+				font-size: 16px;
+				border-radius: 6px;
+			}
+			#yes{
+				color: white;
+				margin-left: 10px;
+				border: 0;
+				background: gainsboro;
+				width: 60px;
+				height: 30px;
+				font-size: 16px;
+				border-radius: 6px;
+			}
+			#gary{
+				width: 100%;
+				background: gainsboro;
+				height: 85%;
+				position: absolute;
+				opacity: 0.7;
+				top: 40px;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="top">
+			<div id="tit">
+				<a id="left" href="#"><</a>
+				<span id="card">
+					我的银行卡
+				</span>	
+				<a href="#" id="but">编辑</a>
+				<a href="#" id="but1">添加</a>
+			</div>
+			<ul class="list">
+				<li>中国建设银行</li>
+				<li>储蓄卡</li>
+				<li>**** **** **** 8888</li>
+				<button class="dele" id="butt1">删除</button>
+			</ul>
+			<ul class="list">
+				<li>中国农业银行</li>
+				<li>储蓄卡</li>
+				<li>**** **** **** 6666</li>
+				<button class="dele" id="butt1">删除</button>
+			</ul>
+			<ul class="list">
+				<li>中国银行</li>
+				<li>储蓄卡</li>
+				<li>**** **** **** 9999</li>
+				<button class="dele" id="butt1">删除</button>
+			</ul>
+			<div id="gary"></div>
+		</div>
+			<div id="conf">
+				<span id="font">
+					确定要删除银行卡？
+				</span>
+				<button id="no">取消</button>
+				<button id="yes">确定</button>
+			</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js" ></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#but').click(function(){
+				$('.dele').css('display','block')
+			})
+			$('.dele').click(function(){
+				var i = $('.dele').index(this);
+				$('#gary').css('display','block');
+				$('#conf').css('display','block');
+				$('#yes').click(function(){
+					$('.dele').parent().eq(i).hide()
+					$('#conf').css('display','none');
+					$('#gary').css('display','none');
+				})
+				
+			})
+			$('#no').click(function(){
+				$('#conf').css('display','none');
+				$('#gary').css('display','none');
+			})
+		})
+		$('#left').click(function(){
+				$('.dele').css('display','none')
+			
+		})
+		$('#but').mousemove(function(){
+			$('#but1').css('display','block')
+		})
+		$('#tit').mouseleave(function(){
+			$('#but1').css('display','none')
+		})
+	</script>
+</html>
