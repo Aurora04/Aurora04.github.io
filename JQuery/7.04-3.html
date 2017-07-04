@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+
+			}
+			#top{
+				width: 650px;
+				height: 800px;
+				position: relative;
+			}
+			#left{
+				width: 250px;
+				height: 800px;
+				box-sizing: border-box;
+				/*border: 1px solid darkgrey;*/
+				float: left;
+			}
+			#center{
+				width: 150px;
+				height: 400px;
+				float: left;
+				margin: auto auto;
+				text-align: center;
+				margin-top: 200px;
+			}
+			button{
+				width: 100px;
+				height: 25px;
+				margin-top: 55px;
+				font-size: 13px;
+			}
+			#right{
+				width: 250px;
+				height: 800px;
+				box-sizing: border-box;
+				/*border: 1px solid darkgrey;*/
+				float: left;
+			}
+			ul{
+				border: 1px solid darkgrey;
+				height: 97%;
+				list-style: none;
+			}
+			li{
+				margin-top: 5px;
+				padding-left: 3px;
+			}
+			li:hover{
+				cursor: pointer;
+			}
+			li.active{
+				background-color: burlywood;
+				box-shadow: 0px 3px 3px 0px gainsboro;
+			}
+			h3{
+				text-align: center;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="top">
+			<div id="left">
+				<h3>未选择模块</h3>
+				<ul>
+					<li>Accelerometer(加速度传感器)</li>
+					<li>Audio(音频)</li>
+					<li>Barcode(二维码)</li>
+					<li>Camera(摄像头)</li>
+					<li>Contact(通讯录)</li>
+					<li>Downloader(文件下载)</li>
+					<li>Gallery(相册)</li>
+					<li>Geolocation(位置信息)</li>
+					<li>IO(文件系统)</li>
+					<li>Maps(地图)</li>
+					<li>Messaging(短彩邮件消息)</li>
+					<li>Native.js(文件下载)</li>
+				</ul>
+			</div>
+			<div id="center">
+				<button id="allAdd">全部添加>> </button><br />
+				<button id="add">添加>>  </button><br />
+				<button id="dele"><<删除  </button><br />
+				<button id="addDele"><<全部删除 </button><br />
+			</div>
+			<div id="right">
+				<h3>已选择模块</h3>
+				
+				<ul>
+					
+					
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js" ></script>
+	<script type="text/javascript">
+		$('li').each(function(i,elem){
+			$(elem).attr('myIndex',i)			
+		});
+		$('li').click(function(){
+			$(this).toggleClass('active')
+		})
+		
+		$('#add').click(function(){
+			$('#right ul li').each(function(j,el){
+				$(el).removeClass();
+			})
+			$('li').each(function(i,elem){
+				if($(elem).attr('class')=="active"){
+					$('#right ul').append($(elem).clone(true));
+					$(elem).remove()
+				}		
+			});
+			rank($('#right ul li'));
+		})
+		$('#allAdd').click(function(){
+			$('#right ul li').each(function(j,el){
+				$(el).removeClass();
+			})
+			$('li').each(function(i,elem){
+					$('#right ul').append($(elem).clone(true));
+					$(elem).remove()
+			});
+			rank($('#right ul li'));
+		})
+		$('#dele').click(function(){
+			$('#left ul li').each(function(j,el){
+				$(el).removeClass();
+			})
+			$('li').each(function(i,elem){
+				if($(elem).attr('class')=="active"){
+					$('#left ul').append($(elem).clone(true));
+					$(elem).remove()
+				}		
+			});
+			rank($('#left ul li'));
+		})
+		$('#addDele').click(function(){
+			$('#left ul li').each(function(j,el){
+				$(el).removeClass();
+			})
+			$('li').each(function(i,elem){
+					$('#left ul').append($(elem).clone(true));
+					$(elem).remove()
+			});
+			rank($('#left ul li'))
+		})
+		function rank(obj){
+			obj.each(function(i,elem){
+				var a = $(elem).attr('myIndex');
+				obj.each(function(j,ele){
+					var c = $(ele).attr('myIndex');
+					if(parseInt(c)>parseInt(a)){
+						obj.parent().append($(ele))
+					}
+				})
+			})
+		}
+		
+	</script>
+</html>
