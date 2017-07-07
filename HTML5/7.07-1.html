@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#cont {
+				width: 800px;
+				height: 500px;
+				background: #A6B9C2;
+				position: absolute;
+			}
+			
+			#top {
+				margin: auto;
+				width: 500px;
+				height: 400px;
+				margin-top: 50px;
+				border-radius: 6px;
+				background: #EDEDED;
+				box-shadow: 0px 2px 5px 2px gray;
+			}
+			
+			#vid {
+				width: 80%;
+				height: 300px;
+				margin-left: 50px;
+				overflow: hidden;
+			}
+			
+			#video {
+				width: 100%;
+				height: 80%;
+				position: relative;
+			}
+			
+			#progress {
+				width: 75%;
+				height: 10px;
+				border: 1px solid #D2D2D2;
+				box-shadow: 0px 0px 0px 1px #D1D1D1;
+				/*float: left;*/
+				margin: auto;
+				margin-top: 20px;
+				margin-left: 15px;
+				border-radius: 10px;
+				position: relative;
+			}
+			
+			#handle {
+				width: 100%;
+				height: 100px;
+				border-top: 1px solid dimgray;
+			}
+			
+			span {
+				margin-top: 18px;
+				float: left;
+				font-size: 12px;
+				margin-left: 5px;
+			}
+			
+			video {
+				display: inline-block;
+				width: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				margin-top: -30px;
+			}
+			
+			#progress_1 {
+				display: inline-block;
+				height: 100%;
+				background: red;
+				position: absolute;
+				top: -18px;
+				left: -5px;
+				border-radius: 10px;
+				background-color: #ac0;
+				background-size: 50px 50px;
+				/* 控制条纹的大小 */
+				background-image: linear-gradient(45deg, rgba(255, 255, 255, .2) 25%,
+									 transparent 25%, 
+									 transparent 50%, 
+									 rgba(255, 255, 255, 0.2) 50%, 
+									 rgba(255, 255, 255, 0.2) 75%, 
+									 transparent 75%, transparent);
+			}
+			#yuan {
+				width: 6px;
+				height: 6px;
+				background: red;
+				margin-top: -2px;
+				margin-left: 0px;
+				border-radius: 50%;
+				border: 5px solid gainsboro;
+			}
+			
+						
+			#volume {
+				width:100px;
+				height: 10px;
+				border: 1px solid #D2D2D2;
+				box-shadow: 0px 0px 0px 1px #D1D1D1;
+				/*float: left;*/
+				margin-right: 80px;
+				float: right;
+				border-radius: 10px;
+				position: relative;
+			}
+			#volume_1 {
+				display: inline-block;
+				height: 100%;
+				width: 100%;
+				background: red;
+				position: absolute;
+				top: -18px;
+				left: -5px;
+				border-radius: 10px;
+				background-color: #ac0;
+			}
+			#volume_2 {
+				width: 12px;
+				height: 12px;
+				background: darkseagreen;
+				margin-top: -4px;
+				margin-left: 90px;
+				border-radius: 50%;
+				border: 4px solid gray;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--<video src="mp4/86U888piCW7w.mp4" controls="controls"></video>-->
+		<!--<video width="800" height="" controls="controls">
+				<source src="mp4/86U888piCW7w.mp4" type="video/mp4"></source>
+				<source src="mp4/86U888piCW7w.ogv" type="video/ogg"></source>
+				<source src="mp4/86U888piCW7w.webm" type="video/webm"></source>
+				<object width="" height="" type="application/x-shockwave-flash" data="mp4/86U888piCW7w.swf">
+					<param name="movie" value="mp4/86U888piCW7w.swf" />
+					<param name="flashvars" value="autostart=true&amp;file=myvimp4/86U888piCW7wdeo.swf" />
+				</object>
+				当前浏览器不支持 video直接播放，点击这里下载视频： <a href="mp4/86U888piCW7w.webm">下载视频</a>
+			</video>-->
+
+		<div id="cont">
+			<div id="top">
+				<div id="vid">
+					<div id="video">
+						<video width="800" height="300px">
+							<source src="mp4/86U888piCW7w.mp4" type="video/mp4"></source>
+							<source src="mp4/86U888piCW7w.ogv" type="video/ogg"></source>
+							<source src="mp4/86U888piCW7w.webm" type="video/webm"></source>
+							<object width="" height="" type="application/x-shockwave-flash" data="mp4/86U888piCW7w.swf">
+								<param name="movie" value="mp4/86U888piCW7w.swf" />
+								<param name="flashvars" value="autostart=true&amp;file=myvimp4/86U888piCW7wdeo.swf" />
+							</object> 当前浏览器不支持 video直接播放，点击这里下载视频：
+							<a href="mp4/86U888piCW7w.webm">下载视频</a>
+						</video>
+					</div>
+					<div id="cc">
+						<span id="progress">
+							<span id="progress_1">
+								<span id="yuan"></span>
+							</span>
+						</span>
+						<span id="realTime">
+								00:00
+						</span>
+						<span id="">
+							<b>/</b>
+						</span>
+						<span id="sumTime">
+								00:00
+						</span>
+					</div>
+				</div>
+				<div id="handle">
+					<button>播放</button>
+					<button>暂停</button>
+					<button>+</button>
+					<button>-</button>
+					<button>快进</button>
+					<button>后退</button>
+					<span id="volume">
+						<span id="volume_1">
+							<span id="volume_2">
+							</span>
+						</span>
+					</span>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		var oV = $('video').get(0);
+		var cTime = Math.round(oV.duration)
+		var c = timeSm(Math.floor(cTime / 60));
+		var s = timeSm(cTime % 60)
+		$('#sumTime').html(c + ':' + s)
+		var timer = null;
+		//拖动进度条
+		$('#yuan').mousedown(function(ev) {
+			var L = ev.clientX;
+			jindu($('#yuan'),$('#progress'),$('#progress_1'),L,true);
+			
+		})
+		$('#volume_2').mousedown(function(ev){
+			var L = ev.clientX;
+			jindu($('#volume_2'),$('#volume'),$('#volume_1'),L,false)
+			
+		})
+		//播放
+		$('button:nth-child(1)').click(function(){
+			relT();
+			oV.play();
+			relTime();
+		})
+		//暂停
+		$('button:nth-child(2)').click(function(){
+			oV.pause();
+			clearInterval(timer)
+		})
+		//加音量
+		$('button:nth-child(3)').click(function(){
+			if(oV.volume<1){
+				oV.volume+=0.1;
+			}else{
+				oV.volume=1;
+			}
+		})
+		//减音量
+		$('button:nth-child(4)').click(function(){
+			if(oV.volume>0){
+				oV.volume-=0.1;
+			}else{
+				oV.volume=0;
+			}
+		})
+		//快进
+		$('button:nth-child(5)').click(function(){
+				oV.currentTime+=5;
+				relTime()
+		})
+		//后退
+		$('button:nth-child(6)').click(function(){
+			oV.currentTime-=5;
+			relTime()
+		})
+		//设置监听 （播放完毕过后）
+		oV.addEventListener('ended',function(){
+			alert('播放完毕')
+			clearInterval(timer);
+			
+		})
+		
+		//播放进度条产生改变
+		
+		function relTime(){
+			
+			timer=setInterval(function(){
+				var cuTime = Math.round(oV.currentTime)
+				var cWidt= cuTime/cTime*$('#progress').innerWidth()
+				$('#yuan').css('margin-left', parseInt(cWidt))
+				$('#progress_1').css('width',  parseInt(cWidt+3))
+				var reTimeM = timeSm(Math.floor(cuTime / 60));
+				var reTimeS = timeSm(cuTime % 60);
+				$('#realTime').html(reTimeM + ':' + reTimeS)
+			},500)
+		}
+		
+		function timeSm(num) {
+			return num >= 10 ? num = num : num = '0' + num;
+
+		}
+		/**
+		 * 功能：拖动进度条
+		 * @param {Object} obj1 小圆点
+		 * @param {Object} obj2  进度条最长度
+		 * @param {Object} obj3	实时改变的进度条
+		 * @param {Object} bool	判断为时间进度 还是 播放进度
+		 */
+		function jindu(obj1,obj2,obj3,L,bool){
+			var marginLeft = obj1.offset().left-obj3.offset().left
+			$(document).mousemove(function(ev) {
+				var L1 = ev.clientX;
+				var jl = (L1 - L) + marginLeft;
+				if(jl > obj2.innerWidth()-15) {
+					jl =obj2.innerWidth()-15
+				} else if(jl < 0) {
+					jl = 0
+				}
+				obj1.css('margin-left', jl);
+				obj3.css('width', (jl + 5));
+				if(bool){
+					var sumGo = $('#progress').innerWidth();
+					var relGo = $('#progress_1').innerWidth()
+					var timeGo=Math.round(( relGo/sumGo)*oV.duration)
+					var cTimeGo = timeSm(Math.floor(timeGo / 60));
+					var sTimeGo = timeSm(timeGo % 60)
+					$('#realTime').html(cTimeGo + ':' + sTimeGo)
+					relT();
+				}else{
+					var volumeGo= $('#volume').innerWidth();
+					var volume_1Go = $('#volume_1').innerWidth();
+					var singGo =( volume_1Go/volumeGo*1);
+					console.log(singGo)
+					oV.volume=singGo;
+					
+				}
+			})
+			$(document).mouseup(function() {
+				$(this).off().mousemove()
+			})
+		}
+		
+		//播放的时候拖动进度条 照样修改已播放的时间
+		function relT(){
+			 		var realTm = $('#realTime').html()
+			 		var sumGo = $('#progress').innerWidth();
+					var relGo = $('#progress_1').innerWidth()
+					var realTmMin=Math.round(( relGo/sumGo)*oV.duration)
+					oV.currentTime=realTmMin;
+		}
+	</script>
+
+</html>
