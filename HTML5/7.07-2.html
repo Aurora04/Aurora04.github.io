@@ -91,7 +91,6 @@
 			#daoxiang{
 				width: 150px;
 				height: 150px;
-				background: palevioletred;
 				margin: auto;
 				margin-top: 50px;
 				border-radius: 50%;
@@ -179,6 +178,7 @@
 				height: 50px;
 				width: 100%;
 				margin-top: 20px;
+				margin-left: 40px;				
 			}
 			
 			button{	
@@ -314,12 +314,6 @@
 				<button id="yinliang">
 					<img src="img/yinliang.png"/>
 				</button>
-				<span id="volume3">
-						<span id="volume_1">
-							<span id="volume_2">
-							</span>
-						</span>
-				</span>
 			</div>
 		</div>
 	</body>
@@ -342,7 +336,7 @@
 		
 		
 		var timer = null;
-		oV.volume=0;
+		oV.volume=1;
 //		拖动播放时间条
 		$('#volume').mousedown(function(ev) {
 			var L = ev.clientX;
