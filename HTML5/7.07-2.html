@@ -331,8 +331,8 @@
 		var oV = $('audio').get(0);
 		var cTime = Math.round(oV.duration)
 		var c = timeSm(Math.floor(cTime / 60));
-		var s = timeSm(cTime % 60)
-		$('#sumTime').html(c + ':' + s)
+		var s = timeSm(cTime % 60);
+			$('#sumTime').html(c + ':' + s);
 		
 		
 		var timer = null;
@@ -352,6 +352,7 @@
 		var bofangBool=true;
 		//播放按钮
 		$('#bofang').click(function(){
+	
 			$('#daoxiang').addClass('imgGo')
 			if(bofangBool){
 				$('#bofang img').attr('src','img/zanting.png');
