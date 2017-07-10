@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			a{
+				cursor: pointer;
+				text-decoration: none;
+				font-size: 25px;
+				position: relative;
+				top: 4px;
+				color: white;
+				margin-top: 3px;
+			}
+			p{
+				margin-left: 35px;
+				font-size: 11px;
+				margin-top: -5px;
+				position: relative;
+				color: antiquewhite;
+			}
+			label{
+				display: inline-block;
+				color: white;
+				top: 2px;
+				left: 35px;
+				position: absolute;
+			}
+			header{
+				border-bottom: 1px solid white;
+				position: relative;
+			}
+			#top{
+				height: 530px;
+				width: 400px;
+				border: 1px solid blueviolet;
+				background: dimgrey;
+				position: relative;
+			}
+			#luntiao{
+				width: 120px;
+				height: 50px;
+				position: absolute;
+				left: 170px;
+				z-index: 10;
+			}
+			#luntiao img{
+				width: 100%;
+				height: 100%;
+			}
+			.goImg{
+				-webkit-animation: go 2s linear alternate forwards;
+				-webkit-transform-origin: left top;
+				
+			}
+			.upImg{
+				-webkit-animation: up 2s linear alternate forwards;
+				-webkit-transform-origin: left top;
+				
+			}
+			.imgGo{
+				-webkit-animation: imgGo 10s linear  infinite;
+				-webkit-transform-origin:center;
+				
+			}
+			@-webkit-keyframes go{
+				0%{
+					-webkit-transform: rotate(0deg);
+				}
+				100%{
+					-webkit-transform: rotate(30deg);
+				}
+			}
+			@-webkit-keyframes up{
+				0%{
+					-webkit-transform: rotate(30deg);
+				}
+				100%{
+					-webkit-transform: rotate(0deg);
+				}
+			}
+			@-webkit-keyframes imgGo{
+				0%{
+					-webkit-transform: rotate(0deg);
+				}
+				100%{
+					-webkit-transform: rotate(360deg);
+				}
+			}
+			#daoxiang{
+				width: 150px;
+				height: 150px;
+				background: palevioletred;
+				margin: auto;
+				margin-top: 50px;
+				border-radius: 50%;
+				border: 35px solid black;
+				box-shadow: 0px 0px 3px 3px gray;
+				background-image: url(img/daoxiang.jpg);
+				background-size: 100% 100%;
+			}
+			/*歌词显示*/
+			#lrc{
+				display: none;
+				width: 100%;
+				height: 320px;
+				position: absolute;
+				top:60px;
+				overflow: hidden;
+				background: dimgrey;
+			}
+			/*播放进度*/
+			#time{
+				width: 400px;
+				height: 20px;
+				/*background: white;*/
+				margin-top: 70px;
+				position: relative;
+			}
+			#realTime{
+				display: inline-block;
+				text-align: center;
+				width: 50px;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				font-size: 13px;
+				height: 100%;
+				line-height: 20px;
+				
+			}
+			#sumTime{
+				display: inline-block;
+				text-align: center;
+				width: 50px;
+				font-size: 13px;
+				position: absolute;
+				top: 0;
+				right: 0;
+				line-height: 20px;
+			}
+			#progress{
+				display: inline-block;
+				background:#D2D2D2 ;
+				box-shadow: 0px 0px 0px 1px #D1D1D1;
+				height: 4px;
+				left: 60px;
+				margin: auto;
+				top: -5px;
+				width: 280px;
+				border-radius: 10px;
+				position: relative;
+			}
+			#progress_1 {
+				display: inline-block;
+				width: 0px;
+				height: 100%;
+				background: red;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				border-radius: 10px;
+				background-color: red;
+				/* 控制条纹的大小 */
+			}
+			#volume{
+				display: inline-block;
+				width: 15px;
+				height: 15px;
+				background: white;
+				position: relative;
+				top: -8px;
+				left: 0px;
+				border-radius: 50%;
+			}
+			#go{
+				height: 50px;
+				width: 100%;
+				margin-top: 20px;
+			}
+			
+			button{	
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				background: dimgrey;
+				border: 0;
+				cursor: pointer;
+				margin-right: 30px;
+				
+			}
+			button img{
+				width: 100%;
+				height: 100%;
+			}
+			#yinliang{
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+			}
+			#volume3 {
+				width:70px;
+				height: 4px;
+				border: 1px solid #D2D2D2;
+				box-shadow: 0px 0px 0px 1px #D1D1D1;
+				margin-right:5px;
+				margin-top: -20px;
+				float: right;
+				border-radius: 10px;
+				position: relative;
+			}
+			#volume_1 {
+				display: inline-block;
+				height: 100%;
+				width: 0;
+				background: red;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				border-radius: 10px;
+				position: relative;
+			}
+			#volume_2 {
+				display: inline-block;
+				width: 15px;
+				height: 15px;
+				background: white;
+				position: relative;
+				top: -8px;
+				left: 0px;
+				border-radius: 50%;
+			}
+			ul{
+				display: inline-block;
+				list-style: none;
+				width: 100%;
+				padding: 0;
+				margin: 0;
+				margin-top:0px;
+			}
+			ul li{
+				text-align: center;
+				color: white;
+				margin-top:3px;
+				font-size: 15px;
+			}
+			li.active{
+				font-size: 17px;
+				color: pink;
+				font-weight: 800;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="top">
+			<div id="cc">
+				
+			
+				<header>
+					<a href="">←</a>
+					<label>稻香</label>
+					<p>周杰伦</p>
+				</header>
+				<div id="luntiao" class="">
+					<img src="img/luntiao.png" />
+				</div>
+				<!--歌曲封面-->
+				<div id="daoxiang">
+				</div>
+				<!--点击屏幕显示歌词， 默认隐藏-->
+				<div id="lrc">
+					<ul>
+					</ul>
+				</div>
+			</div>
+				
+				<audio src="audio/daoxiang.mp3"></audio>
+				<!--播放进度-->
+				<div id="time">
+						<!--进行时间-->
+						<span id="realTime">
+							00:00
+						</span>	
+						<!--进度条-->
+						<span id="progress">
+							<span id="progress_1">
+								<span id="volume">
+								</span>
+							</span>
+						</span>
+						<!--总时间-->
+						<span id="sumTime">
+							00:00
+						</span>
+
+			</div>
+		<!--操作-->
+			<div id="go">
+				<button>
+					<img src="img/suiji.png"/>
+				</button>
+				<button>
+					<img src="img/shangyishou.png"/>
+				</button>
+				<button id="bofang">
+					<img src="img/bofang.png"/>
+				</button>
+				<button>
+					<img src="img/xiayishou.png"/>
+				</button>
+				<button id="yinliang">
+					<img src="img/yinliang.png"/>
+				</button>
+				<span id="volume3">
+						<span id="volume_1">
+							<span id="volume_2">
+							</span>
+						</span>
+				</span>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js" ></script>
+	<script type="text/javascript" src="lrc/daoxiang.js" ></script>
+	<script type="text/javascript">
+		confirm('提示：浏览器兼容问题尚未完善！！');
+		var str = "";
+		for(attr in dxLrc){
+			str+='<li time="'+attr+'">'+dxLrc[attr]+'</li>';
+		}
+		$('ul').html(str);
+		
+		
+		var oV = $('audio').get(0);
+		var cTime = Math.round(oV.duration)
+		var c = timeSm(Math.floor(cTime / 60));
+		var s = timeSm(cTime % 60)
+		$('#sumTime').html(c + ':' + s)
+		
+		
+		var timer = null;
+		oV.volume=0;
+//		拖动播放时间条
+		$('#volume').mousedown(function(ev) {
+			var L = ev.clientX;
+			jindu($('#volume'),$('#progress'),$('#progress_1'),L,true);
+			
+		})
+		//拖动音量托条
+		$('#volume_2').mousedown(function(ev){
+			var L = ev.clientX;
+			jindu($('#volume_2'),$('#volume3'),$('#volume_1'),L,false)
+			
+		})
+		var bofangBool=true;
+		//播放按钮
+		$('#bofang').click(function(){
+			$('#daoxiang').addClass('imgGo')
+			if(bofangBool){
+				$('#bofang img').attr('src','img/zanting.png');
+				$('#luntiao').removeClass('upImg')
+				$('#luntiao').addClass('goImg')
+				oV.play();
+				relTime();
+			}else{
+				$('#bofang img').attr('src','img/bofang.png');
+				$('#luntiao').addClass('upImg')
+				oV.pause();
+				clearInterval(timer)
+			}
+			bofangBool=!bofangBool;
+		})
+		var lrcBoole = false;
+		//点击屏幕 隐藏、显示歌词
+		$('#cc').click(function(){
+			if(lrcBoole){
+				$('#lrc').css('display','none');
+				$("#luntiao").css('display','block');
+			}else{
+				$('#lrc').css('display','block');
+				$("#luntiao").css('display','none');
+			}
+			lrcBoole=!lrcBoole;
+		})
+		
+		//歌曲播放 歌词滚动
+		function lrcSing(){
+			setInterval(function(){
+				var reTime = $('#realTime').html();
+				$('li').each(function(i){
+					var liTime = $(this).attr('time');
+					if(reTime==liTime){
+						$('li').removeClass('active')
+						 $(this).addClass('active')
+						 if(i>6){
+						 	$('ul').css('margin-top',-(i-6)*25)
+						 }
+					}
+				})
+			},500)
+		}
+	//播放进度条产生改变
+		function relTime(){
+			timer=setInterval(function(){
+				var cuTime = Math.round(oV.currentTime)
+				var cWidt= cuTime/cTime*$('#progress').innerWidth();
+				
+				$('#volume').css('margin-left', parseInt(cWidt));
+				$('#progress_1').css('width',  parseInt(cWidt+3));
+				
+				var reTimeM = timeSm(Math.floor(cuTime / 60));
+				var reTimeS = timeSm(cuTime % 60);
+				$('#realTime').html(reTimeM + ':' + reTimeS)
+				lrcSing()
+			},500)
+		}
+		/**
+		 * 功能：拖动进度条
+		 * @param {Object} obj1 小圆点
+		 * @param {Object} obj2  进度条最长度
+		 * @param {Object} obj3	实时改变的进度条
+		 * @param {Object} bool	判断为时间进度 还是 播放进度
+		 */
+		function jindu(obj1,obj2,obj3,L,bool){
+			var marginLeft = obj1.offset().left-obj3.offset().left
+			$(document).mousemove(function(ev) {
+				var L1 = ev.clientX;
+				var jl = (L1 - L) +marginLeft;
+				if(jl > obj2.innerWidth()-15) {
+					jl =obj2.innerWidth()-15
+				} else if(jl < 0) {
+					jl = 0
+				}
+				obj1.css('margin-left', jl);
+				obj3.css('width', (jl + 5));
+				if(bool){
+					var sumGo = $('#progress').innerWidth();
+					var relGo = $('#progress_1').innerWidth()
+					var timeGo=Math.round(( relGo/sumGo)*oV.duration)
+					var cTimeGo = timeSm(Math.floor(timeGo / 60));
+					var sTimeGo = timeSm(timeGo % 60)
+					$('#realTime').html(cTimeGo + ':' + sTimeGo)
+					relT();
+				}else{
+					var volumeGo= $('#volume3').innerWidth();
+					var volume_1Go = $('#volume_1').innerWidth();
+					var singGo =( volume_1Go/volumeGo*1);
+					oV.volume=singGo;
+				}
+			})
+			
+			$(document).mouseup(function() {
+				$(this).off().mousemove()
+			})
+		}
+	
+		
+				//播放的时候拖动进度条 照样修改已播放的时间
+		function relT(){
+			 		var realTm = $('#realTime').html()
+			 		var sumGo = $('#progress').innerWidth();
+					var relGo = $('#progress_1').innerWidth()
+					var realTmMin=Math.round(( relGo/sumGo)*oV.duration)
+					oV.currentTime=realTmMin;
+					 lrcSing()
+		}
+		function timeSm(num) {
+			return num >= 10 ? num = num : num = '0' + num;
+
+		}
+	</script>
+</html>
