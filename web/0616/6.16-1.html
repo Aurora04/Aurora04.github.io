@@ -118,8 +118,9 @@
 				},n)
 			}
 			//键盘时间
-			window.onkeydown=function(){
-					var ac = window.event.keyCode;
+			window.onkeydown=function(ev){
+				var newEv = ev||event
+					var ac = newEv.keyCode;
 					var keyText =String.fromCharCode(ac)
 					if(keyText==textTo.innerHTML){
 						win++;
