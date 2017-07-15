@@ -8,7 +8,7 @@
 		<script type="text/javascript" src="js/bootstrap.min.js" ></script>
 		<style>
 			body{
-				min-width: 550px;
+				/*min-width: 550px;*/
 			}
 			.top{
 				background: black;
@@ -54,21 +54,37 @@
 			}
 			.hei{
 				width: 100%;
-				height: 105px;
+				/*height: 105px;*/
+				overflow: hidden;
+				white-space: nowrap;
+			}
+			.hei img{
+				width: 100%;
+			}
+			.hei h4{
+				font-size: 4vw;
+				
+			}
+			.hei div{
+				font-size: 3vw;
+			}
+			.shangbang{
+				margin: auto;
 			}
 			.shangbang a{
 				display: inline-block;
 				color: white;
+				font-size: 3vw;
 			}
 			.shangbang a:nth-child(1){
 				background: black;
-				width: 120px;
+				width: 50%;
 				height: 30px;
 				line-height: 30px;
 			}
 			.shangbang a:nth-child(2){
 				background: #C89348;
-				width: 120px;
+				width: 50%;
 				height: 30px;
 				line-height: 30px;
 				margin-left: -5px;
@@ -211,20 +227,22 @@
 				position: fixed;
 				top: 50px;
 				background: black;
-				height: 480px;
+				/*height: 450px;*/
 				z-index: 5;
 				display: none;
 			}
 			
 			.list li{
 				padding-left: 10px;
-				padding-top: 20px;
-				height: 50px;
+				padding-top: 10px;
 				font-size: 16px;
 				cursor: pointer;
 			}
 			.list li:hover{
 				color: #B88744;
+			}
+			a{
+				font-size: 4vw;
 			}
 		</style>
 	</head>
@@ -276,14 +294,16 @@
 							<a href="" style="color:#B88744 ;">成都模特</a>
 					
 				</li>
-				<li>模特库</li>
-				<li>企业合作</li>
-				<li>网红直播</li>
-				<li>招募计划</li>
-				<li>行业行骗</li>
-				<li>关于我们</li>
-				<li>时尚生活</li>
-				<li>模特免费推荐>></li>
+				<li>
+					<a href="">模特库</a></li>
+				<li>
+					<a href="">企业合作</a></li>
+				<li><a>网红直播</a></li>
+				<li><a>招募计划</a></li>
+				<li><a>行业行骗</a></li>
+				<li><a>关于我们</a></li>
+				<li><a>时尚生活</a></li>
+				<li><a>模特免费推荐>></a></li>
 			</ul>
 		</div>
 		<div class="top container-fluid"></div>
@@ -303,17 +323,17 @@
 						<br>
 						涉及时尚文化开拓、品牌策划、时装发布，网红模特直播，事件营销，视觉营销，商业品牌全案策划，品牌代言多个领域
 					</p>
-					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center">
 						<img width="150px" height="150px" src="http://source.chengdumote.com/wp-content/themes/sugarbox/images/code.jpg?imageslim"/>
-						<p>马上联系负责人</p>
+						<p style="width: 100%;">马上联系负责人</p>
 					</div>
 					<div class="col-lg-6 col-md-6 col-sm-6">
 						<img width="150px" height="150px" src="http://source.chengdumote.com/wp-content/themes/sugarbox/images/qrcode.jpg?imageslim"/>
 						<p>关注微信公众号</p>
 					</div>
 				</div>
-				<div class="shangbang col-lg-12 col-sm-12 col-md-12 col-xs-12">
-					<a href=""> <<企业资源合作</a>
+				<div class="shangbang col-lg-12 col-sm-12 col-md-12 col-xs-12 text-center">
+					<a href=""><<企业资源合作</a>
 					<a href="">模特免费上榜>></a>
 				</div>
 			</div>
@@ -329,7 +349,7 @@
 						<div class="img col-xs-3 col-sm-3 col-md-3 col-lg-2" >
 							<img src="http://source.chengdumote.com/wp-content/uploads/2016/06/nvshen2-400x400.jpg?imageslim"/>
 						</div>
-						<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 text-left">
+						<div class="col-xs-6 col-sm-8 col-md-8 col-lg-9 text-left">
 							<h4>游戏模特拍摄招募</h4>
 							<span id="">
 								类别：
@@ -346,7 +366,7 @@
 						<div class="img col-xs-3 col-sm-3 col-md-3 col-lg-2" >
 							<img src="http://source.chengdumote.com/wp-content/uploads/2016/06/7916993893382995910-400x400.jpg?imageslim"/>
 						</div>
-						<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 text-left">
+						<div class="col-xs-6 col-sm-8 col-md-8 col-lg-9 text-left">
 							<h4>《美女与极客》 百万奖金招募嘉宾</h4>
 							<span id="">
 								类别：
@@ -363,9 +383,9 @@
 						<div class="img col-xs-3 col-sm-3 col-md-3 col-lg-2" >
 							<img src="http://source.chengdumote.com/wp-content/uploads/2016/06/zhaomu-400x400.png?imageslim"/>
 						</div>
-						<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 text-left">
+						<div class="col-xs-6 col-sm-8 col-md-8 col-lg-9 text-left">
 							<h4>成都模特网直播招聘，用情怀打造不一样的直播内容</h4>
-							<span id="">
+							<span>
 								类别：
 								<a href="" style="color: #C0A16B;">工作招募</a>
 							</span>
@@ -998,7 +1018,7 @@
 			</div>
 		</div>
 		
-		<div class="container-fluid bottomTex panel-body text-center">
+		<div style="min-height:200px ;" class="container-fluid bottomTex panel-body text-center">
 			<p>Copyright  <a href="">成都模特</a> All rights reserved.
 			</p>
 			<p>
