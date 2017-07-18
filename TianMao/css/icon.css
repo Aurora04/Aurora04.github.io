@@ -32,6 +32,42 @@
 	color: red;
 }
 .iconfont.icon-tianmaodianpuLOGO{
-	font-size: 130px;
 	color: white;
+	font-size:125px;
+}
+.iconfont.icon-liebiao1{
+	font-size: 17px;
+	color: white;
+}
+.productA .iconfont.icon-tianmaochaoshigouwuche{
+	color: white;
+}
+.iconfont.icon-tianmaochaoshigouwuche{
+	font-size: 22px;
+}
+.iconfont.icon-dianzanhongxincaise{
+	font-size: 10px;
+}
+.productB .iconfont.icon-tianmao{
+	font-size: 40px;
+	color: #FF0036;
+}
+.iconfont.icon-huanyipi{
+	font-size: 25px;
+	color:  #A69999;
+}
+.iconfont.icon-shouji2{
+	font-size: 19px;
+}
+.iconfont.icon-lanzi{
+	font-size: 20px;
+	font-weight: 800;
+}
+.iconfont.icon-feiji{
+	font-size: 20px;
+	font-weight: 800;
+}
+.iconfont.icon-xin{
+	font-size: 18px;
+	font-weight: 800;
 }

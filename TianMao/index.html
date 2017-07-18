@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8" />
-		<title></title>
-		<link rel="stylesheet" type="text/css" href="css/TianMao.css"/>
-		<link rel="stylesheet" type="text/css" href="css/icon.css"/>
-		<link rel="stylesheet" type="text/css" href="font/iconfont.css"/>
-		<link rel="stylesheet" type="text/css" href="font1/iconfont.css"/>
-		<link rel="stylesheet" type="text/css" href="font-bott/iconfont.css"/>
-		<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
-		<script type="text/javascript" src="js/TianMao.js" ></script>
+		<title>
+			天猫tmall.com--理想生活上天猫</title>
+		<link rel="stylesheet" type="text/css" href="css/TianMao.css" />
+		<link rel="stylesheet" type="text/css" href="css/icon.css" />
+		<link rel="stylesheet" type="text/css" href="font/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="font1/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="font-bott/iconfont.css" />
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="js/TianMao.js"></script>
+		<script src="http://www.jq22.com/jquery/jquery-1.10.2.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/getcanvaspixelcolor.js" ></script>
 	</head>
-	<body style="height: 5000px;">
+
+	<body style="height: 6000px;">
 		<center>
-		<!--右边导航栏-->
-		<div id="fix">
-						<div class="icon_bg">
-							<span></span>
-						</div>
+			<!--右边导航栏-->
+			<div id="fix">
+				<div class="icon_bg">
+					<span></span>
+				</div>
 				<div id="cc">
 					<div myText="会员权益" class="icon_bg_cd">
 						<i class="iconfont icon-tianmao"></i>
@@ -26,46 +31,46 @@
 						<i class="iconfont icon-tianmaochaoshigouwuche"></i>
 						<p>购物车</p>
 					</div>
-					<div myText="我的资产"  class="icon_bg_cd">
+					<div myText="我的资产" class="icon_bg_cd">
 						<i class="iconfont icon-qian"></i>
 					</div>
-					<div myText="我的资产"  class="icon_bg_cd">
+					<div myText="我的资产" class="icon_bg_cd">
 						<i class="iconfont icon-xin"></i>
 					</div>
-					<div myText="我关注的品牌"  class="icon_bg_cd">
+					<div myText="我关注的品牌" class="icon_bg_cd">
 						<i class="iconfont icon-kongwujiaoxing"></i>
 					</div>
 					<div myText="我的收藏" class="icon_bg_cd">
 						<i class="iconfont icon-shijian"></i>
 					</div>
-					<div myText="我看过的"  class="icon_bg_cd">
+					<div myText="我看过的" class="icon_bg_cd">
 						<i class="iconfont icon-chong"></i>
 					</div>
 				</div>
 				<div id="bb">
-					<div myText="用户反馈"  class="icon_bg_cd">
+					<div myText="用户反馈" class="icon_bg_cd">
 						<i class="iconfont icon-icon13"></i>
 					</div>
-					<div >
+					<div>
 						<i class="iconfont icon-erweima1"></i>
 					</div>
 					<div id="backTop" myText="返回顶部" class="icon_bg_cd">
 						<i class="iconfont icon-top"></i>
 					</div>
 				</div>
-		</div>
-		<!--当滚动条滑动到什么时候，上方出现搜索栏-->	
-		<div id="seekTop">
-			<div id="seek_1">
-				<i class="iconfont icon-tianmaodianpuLOGO"></i>
-				<input type="text" name="" id="" value="" placeholder="原装进口全世界" />
-				<button>搜索</button>
 			</div>
-		</div>
-			
-	<!--正文-->
-	<!--全局-->
-		<!--页头图片-->
+			<!--当滚动条滑动到什么时候，上方出现搜索栏-->
+			<div id="seekTop">
+				<div id="seek_1">
+					<i class="iconfont icon-tianmaodianpuLOGO"></i>
+					<input type="text" name="" id="" value="" placeholder="原装进口全世界" />
+					<button>搜索</button>
+				</div>
+			</div>
+
+			<!--正文-->
+			<!--全局-->
+			<!--页头图片-->
 			<div id="Header">
 				<div id="Header_1"></div>
 				<div id="Header_3"></div>
@@ -73,7 +78,7 @@
 			<div id="Header_2">
 				<img src="img/header/TB1XsN2RFXXXXb6XFXXwu0bFXXX.png" width="100%" height="100%" />
 			</div>
-		<!--页头登录和选择栏-->
+			<!--页头登录和选择栏-->
 			<div id="select">
 				<div id="login_select">
 					<div id="login">
@@ -85,33 +90,39 @@
 						<li id="dianji">
 							<a id="on" class="a">我的淘宝
 								<i id="i" class="iconfont icon-head103xiaoxia"></i></a>
-								<div id="Under_1">
-									<p><a class="b">已买到的宝贝</a></p>
-									<p><a class="b">已卖出的宝贝</a></p>
-								</div>
+							<div id="Under_1">
+								<p>
+									<a class="b">已买到的宝贝</a>
+								</p>
+								<p>
+									<a class="b">已卖出的宝贝</a>
+								</p>
+							</div>
 						</li>
 						<li>
-							<a class="a"><i class="iconfont icon-dianzanhongxincaise"></i>
-								我关注的品牌	
+							<a class="a"><i class="iconfont icon-dianzanhongxincaise"></i> 我关注的品牌
 							</a>
 						</li>
 						<li>
-							<a class="a"><i class="iconfont icon-gouwuchehong"></i>
-								购物车<strong >0</strong>件
+							<a class="a"><i class="iconfont icon-gouwuchehong"></i> 购物车
+								<strong>0</strong>件
 							</a>
 						</li>
 						<li id="Bookmarks">
 							<a id="Bookmarks_1" class="a">收藏夹
-							<i id="ii" class="iconfont icon-head103xiaoxia"></i>  </a>
+								<i id="ii" class="iconfont icon-head103xiaoxia"></i> </a>
 							<div id="favorite">
-								<p><a class="b">收藏的宝贝</a></p>
-								<p><a class="b">收藏的店铺</a></p>
+								<p>
+									<a class="b">收藏的宝贝</a>
+								</p>
+								<p>
+									<a class="b">收藏的店铺</a>
+								</p>
 							</div>
 						</li>
 						<li class="get">
 							<b style="color: #CCCCCC;">|</b>
-							<a class="a"><i class="iconfont icon-shouji2"></i>
-								手机版	
+							<a class="a"><i class="iconfont icon-shouji2"></i> 手机版
 							</a>
 						</li>
 						<li class="get">
@@ -121,10 +132,10 @@
 							<a class="a">企业购
 							</a>
 						</li>
-						<li id="sustain"  class="get">
+						<li id="sustain" class="get">
 							<a id="sustain_1" class="a">商家支持
-							<i id="iii" class="iconfont icon-head103xiaoxia"></i>  </a>
-							<div id="support" >
+								<i id="iii" class="iconfont icon-head103xiaoxia"></i> </a>
+							<div id="support">
 								<ul>
 									<li>
 										<h4>商家：</h4>
@@ -147,68 +158,68 @@
 						</li>
 						<li id="map">
 							<a id="map_1" class="a">网站导航
-							<i id="iiii" class="iconfont icon-head103xiaoxia"></i>  </a>
+								<i id="iiii" class="iconfont icon-head103xiaoxia"></i> </a>
 							<div id="site">
-									<div class="site_1">
-										<h3>热点推荐   &nbsp; Hot</h3>
-										<a href="#" class="siteA">天猫超市</a>
-										<a href="#" class="siteA">喵鲜生</a>
-										<a href="#" class="siteA">科技新品</a>
-										<a href="#" class="siteA">女装新品</a>
-										<a href="#" class="siteA">酷玩街</a>
-										<a href="#" class="siteA">内衣新品</a>
-										<a href="#" class="siteA">试美妆</a>
-										<a href="#" class="siteA">运动新品</a>
-										<a href="#" class="siteA">时尚先生</a>
-										<a href="#" class="siteA">精明妈咪</a>
-										<a href="#" class="siteA">吃乐会</a>
-										<a href="#" class="siteA">企业采购</a>
-										<a href="#" class="siteA">会员积分</a>
-										<a href="#" class="siteA">天猫国际</a>
-									</div>
-									<div class="site_2">
-										<h3>行业市场&nbsp; &nbsp; Market</h3>
-										<a href="#" class="siteA">美妆</a>
-										<a href="#" class="siteA">电器</a>
-										<a href="#" class="siteA">女装</a>
-										<a href="#" class="siteA">男装</a>
-										<a href="#" class="siteA">女鞋</a>
-										<a href="#" class="siteA">男鞋</a>
-										<a href="#" class="siteA">内衣</a>
-										<a href="#" class="siteA">箱包</a>
-										<a href="#" class="siteA">运动</a>
-										<a href="#" class="siteA">母婴</a>
-										<a href="#" class="siteA">假装</a>
-										<a href="#" class="siteA">医药</a>
-										<a href="#" class="siteA">食品</a>
-										<a href="#" class="siteA">配饰</a>
-										<a href="#" class="siteA">汽车</a>
-									</div>
-									<div class="site_3">
-										<h3>品牌风尚&nbsp; &nbsp;Brand</h3>
-										<a href="#" class="siteA">尚天猫</a>
-										<a href="#" class="siteA">大牌街</a>
-										<a href="#" class="siteA">潮牌接</a>
-										<a href="#" class="siteA">天猫原创</a>
-										<a href="#" class="siteA">什么牌子好</a>
-									</div>
-									<div class="site_4">
-										<h3>服务指南&nbsp; &nbsp; Help</h3>
-										<a href="#" class="siteA">帮助中心</a>
-										<a href="#" class="siteA">品质保障</a>
-										<a href="#" class="siteA">特色服务</a>
-										<a href="#" class="siteA">7天退换货</a>
-									</div>
+								<div class="site_1">
+									<h3>热点推荐   &nbsp; Hot</h3>
+									<a href="#" class="siteA">天猫超市</a>
+									<a href="#" class="siteA">喵鲜生</a>
+									<a href="#" class="siteA">科技新品</a>
+									<a href="#" class="siteA">女装新品</a>
+									<a href="#" class="siteA">酷玩街</a>
+									<a href="#" class="siteA">内衣新品</a>
+									<a href="#" class="siteA">试美妆</a>
+									<a href="#" class="siteA">运动新品</a>
+									<a href="#" class="siteA">时尚先生</a>
+									<a href="#" class="siteA">精明妈咪</a>
+									<a href="#" class="siteA">吃乐会</a>
+									<a href="#" class="siteA">企业采购</a>
+									<a href="#" class="siteA">会员积分</a>
+									<a href="#" class="siteA">天猫国际</a>
+								</div>
+								<div class="site_2">
+									<h3>行业市场&nbsp; &nbsp; Market</h3>
+									<a href="#" class="siteA">美妆</a>
+									<a href="#" class="siteA">电器</a>
+									<a href="#" class="siteA">女装</a>
+									<a href="#" class="siteA">男装</a>
+									<a href="#" class="siteA">女鞋</a>
+									<a href="#" class="siteA">男鞋</a>
+									<a href="#" class="siteA">内衣</a>
+									<a href="#" class="siteA">箱包</a>
+									<a href="#" class="siteA">运动</a>
+									<a href="#" class="siteA">母婴</a>
+									<a href="#" class="siteA">假装</a>
+									<a href="#" class="siteA">医药</a>
+									<a href="#" class="siteA">食品</a>
+									<a href="#" class="siteA">配饰</a>
+									<a href="#" class="siteA">汽车</a>
+								</div>
+								<div class="site_3">
+									<h3>品牌风尚&nbsp; &nbsp;Brand</h3>
+									<a href="#" class="siteA">尚天猫</a>
+									<a href="#" class="siteA">大牌街</a>
+									<a href="#" class="siteA">潮牌接</a>
+									<a href="#" class="siteA">天猫原创</a>
+									<a href="#" class="siteA">什么牌子好</a>
+								</div>
+								<div class="site_4">
+									<h3>服务指南&nbsp; &nbsp; Help</h3>
+									<a href="#" class="siteA">帮助中心</a>
+									<a href="#" class="siteA">品质保障</a>
+									<a href="#" class="siteA">特色服务</a>
+									<a href="#" class="siteA">7天退换货</a>
+								</div>
 							</div>
 						</li>
-					</ul> 
+					</ul>
 				</div>
 			</div>
-		<!--天猫搜索栏-->
+			<!--天猫搜索栏-->
 			<div id="tmHunt">
 				<div id="tmHunt_1">
 					<div>
-						<img src="img/tmHunt/TB1MaLKRXXXXXaWXFXXXXXXXXXX-480-260.png"/>
+						<img src="img/tmHunt/TB1MaLKRXXXXXaWXFXXXXXXXXXX-480-260.png" />
 					</div>
 					<div id="import_hunt">
 						<div>
@@ -229,8 +240,1450 @@
 					</div>
 				</div>
 			</div>
-			
+			<!--商品分类-->
+			<div id="productList">
+				<div id="productList_text">
+					<a href="" class="productA">
+						<i class="iconfont icon-liebiao1"></i> 商品分类
+					</a>
+					<a href="" class="productA productB">
+						<i class="iconfont icon-tianmaochaoshigouwuche"></i> 天猫超市
+						<div>
+							<i class="iconfont icon-tianmao"></i>
+						</div>
+					</a>
+					<a href="" class="productA productB">
+						<i class="iconfont icon-dianzanhongxincaise"></i> 天猫国际
+						<div>
+							<i class="iconfont icon-tianmao"></i>
+						</div>
+					</a>
+					<a href="" class="productB">天猫会员
+						<div>
+							<i class="iconfont icon-tianmao"></i>
+						</div>
+					</a>
+					<a href="" class="productB">品牌街
+						<div>
+							<i class="iconfont icon-tianmao"></i>
+						</div>
+					</a>
+					<a href="" class="productB">电器城
+						<div>
+							<i class="iconfont icon-tianmao"></i>
+						</div>
+					</a>
+					<a href="" class="productB">喵鲜生
+						<div>
+							<i class="iconfont icon-tianmao"></i>
+						</div>
+					</a>
+					<a href="" class="productB">医药馆
+						<div>
+							<i class="iconfont icon-tianmao"></i>
+						</div>
+					</a>
+					<a href="" class="productB">营业厅
+						<div>
+							<i class="iconfont icon-tianmao"></i>
+						</div>
+					</a>
+					<a href="" class="productB">魅力惠
+						<div>
+							<i class="iconfont icon-tianmao"></i>
+						</div>
+					</a>
+					<a href="" class="productB">飞猪旅行
+						<div>
+							<i class="iconfont icon-tianmao"></i>
+						</div>
+					</a>
+					<a href="" class="productB">苏宁易购
+						<div>
+							<i class="iconfont icon-tianmao"></i>
+						</div>
+					</a>
+				</div>
+			</div>
+	<!--图片轮换，商品类别选择-->
+			<div id="merchandise">
+				<div class="merchandise_main">
+					<div class="merchandise_main_1">
+						<div class="listBox">
+						<ul>
+							<li>
+								<i class="iconfont icon-nvzhuang"></i>
+								<a href="">女装&nbsp;/内衣</a>
+							</li>
+							<li>
+								<i class="iconfont icon-nanzhuang"></i>
+								<a href="">男装&nbsp;/运动户外</a>
+							</li>
+							<li>
+								<i class="iconfont icon-xie"></i>
+								<a href="">女鞋&nbsp;/男鞋&nbsp;/箱包</a>
+							</li>
+							<li>
+								<i class="iconfont icon-huazhuangpin"></i>
+								<a href="">化妆品&nbsp;/个人护理</a>
+							</li>
+							<li>
+								<i class="iconfont icon-jifenbaoshi"></i>
+								<a href="">腕表&nbsp;/珠宝饰品&nbsp;/眼镜</a>
+							</li>
+							<li>
+								<i class="iconfont icon-shouji1"></i>
+								<a href="">手机&nbsp;/数码&nbsp;/电脑办公</a>
+							</li>
+							<li>
+								<i class="iconfont icon-muyingwanju"></i>
+								<a href="">母婴玩具</a>
+							</li>
+							<li>
+								<i class="iconfont icon-mian"></i>
+								<a href="">零食&nbsp;/进口食品&nbsp;/茶酒</a>
+							</li>
+							<li>
+								<i class="iconfont icon-shengxianshuiguo"></i>
+								<a href="">生鲜水果</a>
+							</li>
+							<li>
+								<i class="iconfont icon-jiadian"></i>
+								<a href="">大家电&nbsp;/生活电器</a>
+							</li>
+							<li>
+								<i class="iconfont icon-jiajujiancai"></i>
+								<a href="">家居建材</a>
+							</li>
+							<li>
+								<i class="iconfont icon-qiche"></i>
+								<a href="">汽车&nbsp;/配件&nbsp;/用品</a>
+							</li>
+							<li>
+								<i class="iconfont icon-jiafangjiashi"></i>
+								<a href="">家纺&nbsp;/家饰&nbsp;/鲜花</a>
+							</li>
+							<li>
+								<i class="iconfont icon-yiyaobaojian-copy"></i>
+								<a href="">医药保健</a>
+							</li>
+							<li>
+								<i class="iconfont icon-kafei"></i>
+								<a href="">厨具&nbsp;/收纳&nbsp;/宠物</a>
+							</li>
+							<li>
+								<i class="iconfont icon-tushuyinxiang"></i>
+								<a href="">图书音像</a>
+							</li>
+						</ul>
+					</div>
+					<!--商品分类的详细选项-->
+						<div class="Products_option">
+						<div class="Products_option_txt">
+							<!--1.-->
+							<div class="txt_tt">
+								<div class="txt_tt_1">
+									<h5>当季流行 &nbsp;></h5>
+								</div>
+								<div class="txt_tt_2">
+									<a class="red">夏季新品</a>
+									<a class="red">商场同款</a>
+									<a>气质连衣裙</a>
+									<a>印花衬衫</a>
+									<a>牛仔单品</a>
+									<a>百搭休闲裤</a>
+									<a>无痕文胸</a>
+									<a class="red">运动文胸</a>
+									<a>超柔内裤</a>
+									<a class="red">潮流家居服</a>
+									<a>百搭船袜</a>
+								</div>
+							</div>
+							<!--2.-->
+							<div class="txt_tt">
+								<div class="txt_tt_1">
+									<h5>精选上装&nbsp;></h5>
+								</div>
+								<div class="txt_tt_2">
+									<a class="red">T恤</a>
+									<a >衬衫</a>
+									<a>针织衫</a>
+									<a>短外套</a>
+									<a class="red">小西装</a>
+									<a>风衣</a>
+									<a>卫衣</a>
+									<a>毛衣</a>
+								</div>
+							</div>
+							<!--3.-->
+							<div class="txt_tt">
+								<div class="txt_tt_1">
+									<h5>浪漫裙装&nbsp;></h5>
+								</div>
+								<div class="txt_tt_2">
+									<a class="red">连衣裙</a>
+									<a>蕾丝连衣裙</a>
+									<a class="red">真丝连衣裙</a>
+									<a>印花连衣裙</a>
+									<a>半身裙</a>
+									<a class="red">蕾丝半身裙</a>
+									<a>百褶裙</a>
+									<a class="red">牛仔裙</a>
+									<a>背心裙</a>
+									<a>a字裙</a>
+									<a>棉麻连衣裙</a>
+									<a>包臀裙</a>
+									<a>长袖连衣裙</a>
+								</div>
+							</div>
+							<!--4.-->
+							<div class="txt_tt">
+								<div class="txt_tt_1">
+									<h5>女士下装&nbsp;></h5>
+								</div>
+								<div class="txt_tt_2">
+									<a>短裤</a>
+									<a class="red">牛仔裤</a>
+									<a>休闲裤</a>
+									<a class="red">小脚裤</a>
+									<a>哈伦裤</a>
+									<a>背带裤</a>
+									<a>西装裤</a>
+									<a>阔腿裤</a>
+									<a>打底裤</a>
+								</div>
+							</div>
+							<!--5.-->
+							<div class="txt_tt">
+								<div class="txt_tt_1">
+									<h5>特色女装&nbsp;></h5>
+								</div>
+								<div class="txt_tt_2">
+									<a class="red">时尚套装</a>
+									<a>休闲套装</a>
+									<a class="red">精选妈妈装</a>
+									<a>大码女装</a>
+									<a>职业套装</a>
+									<a>优雅旗袍</a>
+									<a>精致礼服</a>
+									<a>婚纱</a>
+									<a>唐装</a>
+									<a>小码女装</a>
+								</div>
+							</div>
+							<!--6.-->
+							<div class="txt_tt">
+								<div class="txt_tt_1">
+									<h5>文胸塑身&nbsp;></h5>
+								</div>
+								<div class="txt_tt_2">
+									<a>光面文胸</a>
+									<a>运动文胸</a>
+									<a>美背文胸</a>
+									<a>聚拢文胸</a>
+									<a>大杯文胸</a>
+									<a>轻薄塑身</a>
+								</div>
+							</div>
+							<!--7.-->
+							<div class="txt_tt">
+								<div class="txt_tt_1">
+									<h5>家&nbsp;&nbsp;居&nbsp;服&nbsp;></h5>
+								</div>
+								<div class="txt_tt_2">
+									<a>春夏家居服</a>
+									<a>纯棉家居服</a>
+									<a>莫代尔家居服</a>
+									<a>真丝家居服</a>
+									<a>春夏睡裙</a>
+									<a>男士家居服</a>
+									<a>情侣家居服</a>
+									<a>性感睡裙</a>
+								</div>
+							</div>
+							<!--8.-->
+							<div class="txt_tt">
+								<div class="txt_tt_1">
+									<h5>内裤背心&nbsp;></h5>
+								</div>
+								<div class="txt_tt_2">
+									<a>男士内裤</a>
+									<a>女士内裤</a>
+									<a>男士内裤多条装</a>
+									<a>女式内裤多条装</a>
+									<a>莫代尔内裤</a>
+									<a>吊带背心</a>
+								</div>
+							</div>
+						</div>
+						<!--小图片-->
+						<div class="Products_option_img">
+								<img src="img/productImg01/T1-30.jpg"/>
+								<img src="img/productImg01/T1-31.jpg"/>
+								<img src="img/productImg01/T1-33.jpg"/>
+								<img src="img/productImg01/T1-32.jpg"/>
+								<img src="img/productImg01/T1-34.jpg"/>
+								<img src="img/productImg01/T1-35.jpg"/>
+								<img src="img/productImg01/T1-36.jpg"/>
+								<img src="img/productImg01/T1-37.jpg"/>
+								<img src="img/productImg01/T1-38.jpg"/>
+								<img src="img/productImg01/T1-39.jpg"/>
+								<img src="img/productImg01/T1-41.jpg"/>
+								<img src="img/productImg01/T1-42.jpg"/>
+								<img src="img/productImg01/T1-40.jpg"/>
+								<img src="img/productImg01/T1-44.jpg"/>
+								<img src="img/productImg01/T1-45.jpg"/>
+								<img src="img/productImg01/T1-43.jpg"/>
+								<img src="img/productImg01/TB.jpg"/>
+						</div>
+					</div>
+					</div>
+					<!--图片轮换  信息-->
+					<div class="list_presentation">
+						<!--<img src="img/listBox/TB17.jpg"/>-->
+						<canvas id="canvas" class="canvasTo" width="1100" height="500"></canvas>
+						<div id="presentation_1">
+							<img class="img1" src="img/listBox/child/TB20.png"/>
+						</div>
+						<div id="presentation_2">
+							<img src="img/listBox/child/TB21.PNG"/>
+						</div>
+						<ul>
+						</ul>
+					</div>
+				</div>
+			</div>
+	<!--品牌街-->
+			<div class="brands">
+				<div class="brands_to">
+					<div class="brands_big">
+						<img src="img/brands/01.jpg"/>
+					</div>
+					<div class="brands_sm">
+						<ul>
+							<li class="item">
+								<div class="img">
+									<img src="img/brands/02.jpg"/>
+								</div>
+								<div class="mask">
+							        <div class="coupon">
+							            <span>优惠券 ￥50</span>
+							        </div>
+							        <div class="enter">
+							          <a >点击进入</a>
+							        </div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="img">
+									<img src="img/brands/03.jpg"/>
+								</div>
+								<div class="mask">
+							        <div class="coupon">
+							            <span>优惠券 ￥50</span>
+							        </div>
+							        <div class="enter">
+							          <a >点击进入</a>
+							        </div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="img">
+									<img src="img/brands/04.jpg"/>
+								</div>
+								<div class="mask">
+							        <div class="coupon">
+							            <span>优惠券 ￥50</span>
+							        </div>
+							        <div class="enter">
+							          <a >点击进入</a>
+							        </div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="img">
+									<img src="img/brands/05.jpg"/>
+								</div>
+								<div class="mask">
+							        <div class="coupon">
+							            <span>优惠券 ￥50</span>
+							        </div>
+							        <div class="enter">
+							          <a >点击进入</a>
+							        </div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="img">
+									<img src="img/brands/06.jpg"/>
+								</div>
+								<div class="mask">
+							        <div class="coupon">
+							            <span>优惠券 ￥50</span>
+							        </div>
+							        <div class="enter">
+							          <a >点击进入</a>
+							        </div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="img">
+									<img src="img/brands/07.jpg"/>
+								</div>
+								<div class="mask">
+							        <div class="coupon">
+							            <span>优惠券 ￥50</span>
+							        </div>
+							        <div class="enter">
+							          <a >点击进入</a>
+							        </div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="img">
+									<img src="img/brands/08.jpg"/>
+								</div>
+								<div class="mask">
+							        <div class="coupon">
+							            <span>优惠券 ￥50</span>
+							        </div>
+							        <div class="enter">
+							          <a >点击进入</a>
+							        </div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="img">
+									<img src="img/brands/09.jpg"/>
+								</div>
+								<div class="mask">
+							        <div class="coupon">
+							            <span>优惠券 ￥50</span>
+							        </div>
+							        <div class="enter">
+							          <a >点击进入</a>
+							        </div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="img">
+									<img src="img/brands/10.jpg"/>
+								</div>
+								<div class="mask">
+							        <div class="coupon">
+							            <span>优惠券 ￥50</span>
+							        </div>
+							        <div class="enter">
+							          <a >点击进入</a>
+							        </div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="img">
+									<img src="img/brands/11.jpg"/>
+								</div>
+								<div class="mask">
+							        <div class="coupon">
+							            <span>优惠券 ￥50</span>
+							        </div>
+							        <div class="enter">
+							          <a >点击进入</a>
+							        </div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="img">
+									<img src="img/brands/12.jpg"/>
+								</div>
+								<div class="mask">
+							        <div class="coupon">
+							            <span>优惠券 ￥50</span>
+							        </div>
+							        <div class="enter">
+							          <a >点击进入</a>
+							        </div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="img">
+									<img src="img/brands/13.jpg"/>
+								</div>
+								<div class="mask">
+							        <div class="coupon">
+							            <span>优惠券 ￥50</span>
+							        </div>
+							        <div class="enter">
+							          <a >点击进入</a>
+							        </div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="img">
+									<img src="img/brands/14.jpg"/>
+								</div>
+								<div class="mask">
+							        <div class="coupon">
+							            <span>优惠券 ￥50</span>
+							        </div>
+							        <div class="enter">
+							          <a >点击进入</a>
+							        </div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="img">
+									<img src="img/brands/15.jpg"/>
+								</div>
+								<div class="mask">
+							        <div class="coupon">
+							            <span>优惠券 ￥50</span>
+							        </div>
+							        <div class="enter">
+							          <a >点击进入</a>
+							        </div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="img">
+									<img src="img/brands/16.jpg"/>
+								</div>
+								<div class="mask">
+							        <div class="coupon">
+							            <span>优惠券 ￥50</span>
+							        </div>
+							        <div class="enter">
+							          <a >点击进入</a>
+							        </div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="img">
+									<img src="img/brands/17.jpg"/>
+								</div>
+								<div class="mask">
+							        <div class="coupon">
+							            <span>优惠券 ￥50</span>
+							        </div>
+							        <div class="enter">
+							          <a >点击进入</a>
+							        </div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="img">
+									<img src="img/brands/18.jpg"/>
+								</div>
+								<div class="mask">
+							        <div class="coupon">
+							            <span>优惠券 ￥50</span>
+							        </div>
+							        <div class="enter">
+							          <a >点击进入</a>
+							        </div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="img">
+									<img src="img/brands/19.jpg"/>
+								</div>
+								<div class="mask">
+							        <div class="coupon">
+							            <span>优惠券 ￥50</span>
+							        </div>
+							        <div class="enter">
+							          <a >点击进入</a>
+							        </div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="img">
+									<img src="img/brands/20.jpg"/>
+								</div>
+								<div class="mask">
+							        <div class="coupon">
+							            <span>优惠券 ￥50</span>
+							        </div>
+							        <div class="enter">
+							          <a >点击进入</a>
+							        </div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="img">
+									<img src="img/brands/21.jpg"/>
+								</div>
+								<div class="mask">
+							        <div class="coupon">
+							            <span>优惠券 ￥50</span>
+							        </div>
+							        <div class="enter">
+							          <a >点击进入</a>
+							        </div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="img">
+									<img src="img/brands/22.jpg"/>
+								</div>
+								<div class="mask">
+							        <div class="coupon">
+							            <span>优惠券 ￥50</span>
+							        </div>
+							        <div class="enter">
+							          <a >点击进入</a>
+							        </div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="img">
+									<img src="img/brands/23.jpg"/>
+								</div>
+								<div class="mask">
+							        <div class="coupon">
+							            <span>优惠券 ￥50</span>
+							        </div>
+							        <div class="enter">
+							          <a >点击进入</a>
+							        </div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="img">
+									<img src="img/brands/24.jpg"/>
+								</div>
+								<div class="mask">
+							        <div class="coupon">
+							            <span>优惠券 ￥50</span>
+							        </div>
+							        <div class="enter">
+							          <a >点击进入</a>
+							        </div>
+								</div>
+							</li>
+							<li class="item">
+								<div class="cont">
+									<br />
+									<div class="">
+										<i class="iconfont icon-huanyipi"></i>
+									</div>
+									<p class="asd">换一批</p>
+								</div>
+							</li>
+							
+						</ul>
+						
+					</div>
+					
+				</div>
+			</div>
+	<!--潮流前言-->	
+			<div class="tide">
+				<div class="preface">
+					<div class="preface_messa">
+						<div class="preface_title">
+							<i class="iconfont icon-nanzhuang"></i>
+							<strong>潮流前沿</strong>
+						</div>
+						<div class="preface_img">
+							<span id="">
+								<h2>焕新</h2>
+								<p>品牌精选新品</p>
+							</span>
+							<div class="preface_img_img" >
+								<img src="//img.alicdn.com/bao/uploaded/i3/92688455/TB2QpofsYxmpuFjSZJiXXXauVXa_!!92688455.png"/>
+							</div>
+						</div>
+						<div class="preface_img">
+							<span id="">
+								<h2>全球时尚</h2>
+								<p>大牌精致时尚</p>
+							</span>
+							<div class="preface_img_img" >
+								<img src="//gw.alicdn.com/imgextra/i1/99/TB2039PcmiJ.eBjSspfXXbBKFXa_!!99-0-yamato.jpg"/>
+							</div>
+						</div>
+					</div>
+					<div class="preface_messa">
+						<div class="preface_title">
+							<i class="iconfont icon-shouji2"></i>
+							<strong>手机酷玩</strong>
+						</div>
+						<div class="preface_img">
+							<span id="">
+								<h2>手机馆</h2>
+								<p>新品12期免息</p>
+							</span>
+							<div class="preface_img_img" >
+								<img src="https://gw.alicdn.com/tfs/TB15bvLRFXXXXbMaFXXXXXXXXXX-140-140.png"/>
+							</div>
+						</div>
+						<div class="preface_img">
+							<span id="">
+								<h2>酷玩街</h2>
+								<p>潮炫创意智能</p>
+							</span>
+							<div class="preface_img_img" >
+								<img src="//img.alicdn.com/imgextra/i3/5/TB2Di4hqXXXXXboXXXXXXXXXXXX_!!5-0-yamato.jpg"/>
+							</div>
+						</div>
+					</div>
+					<div class="preface_messa">
+						<div class="preface_title">
+							<i class="iconfont icon-lanzi"></i>
+							<strong>品质生活</strong>
+						</div>
+						<div class="preface_img">
+							<span id="">
+								<h2>必抢</h2>
+								<p>居家必备不可错过</p>
+							</span>
+							<div class="preface_img_img" >
+								<img src="//img.alicdn.com/tps/TB1k7GmLVXXXXaMaXXXXXXXXXXX-140-140.jpg"/>
+							</div>
+						</div>
+						<div class="preface_img">
+							<span id="">
+								<h2>喵鲜生</h2>
+								<p>全球好品甄选</p>
+							</span>
+							<div class="preface_img_img" >
+								<img src="//gw.alicdn.com/imgextra/i1/145/TB2xSJ4c5GO.eBjSZFjXXcU9FXa_!!145-0-yamato.jpg"/>
+							</div>
+						</div>
+					</div>
+					<div class="preface_messa">
+						<div class="preface_title">
+							<i class="iconfont icon-feiji"></i>
+							<strong>国际海购</strong>
+						</div>
+						<div class="preface_img">
+							<span id="">
+								<h2>识货</h2>
+								<p>最热全球好货</p>
+							</span>
+							<div class="preface_img_img" >
+								<img src="//gw.alicdn.com/imgextra/i2/60/TB2QfIjdr5K.eBjy0FfXXbApVXa_!!60-0-yamato.jpg"/>
+							</div>
+						</div>
+						<div class="preface_img">
+							<span id="">
+								<h2>天猫国际官方直营</h2>
+								<p>官方进口直采</p>
+							</span>
+							<div class="preface_img_img" >
+								<img src="https://img.alicdn.com/tps/i4/TB1SLAhRVXXXXc2XVXXSutbFXXX.jpg"/>
+							</div>
+						</div>
+					</div>
+					<div class="preface_messa">
+						<div class="preface_title">
+							<i class="iconfont icon-xin"></i>
+							<strong>个性推荐</strong>
+						</div>
+						<div class="preface_img">
+							<span id="">
+								<h2>我爱爸妈</h2>
+								<p>孝心礼物</p>
+							</span>
+							<div class="preface_img_img" >
+								<img src="//gw.alicdn.com/imgextra/i3/124/TB26V23AstnpuFjSZFvXXbcTpXa_!!124-0-luban.jpg"/>
+							</div>
+						</div>
+						<div class="preface_img">
+							<span id="">
+								<h2>焕新家</h2>
+								<p>理想生活家</p>
+							</span>
+							<div class="preface_img_img" >
+								<img src="//gw.alicdn.com/imgextra/i1/166/TB2WXkrAC8mpuFjSZFMXXaxpVXa_!!166-0-luban.jpg"/>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+	<!--宣传图片-->
+		<div class="publicity">
+				<a href="">
+					<div class="">
+						<img src="https://img.alicdn.com/simba/img/TB1G.vvRFXXXXccXVXXSutbFXXX.jpg"/>
+					</div>
+				</a>
+			</div>
+	<!--美丽人生-->
+		<div class="beautiful">
+			<div class="beautifulList">
+				<div class="beautifulList_title">
+					<div class="beautifulList_title_left">
+						<small>美丽人生</small><a>FANSHION & BEAUTY</a>
+					</div>
+					<div class="beautifulList_title_right">
+						<a href="">连衣裙</a>
+						<a href="">T恤男</a>
+						<a href="">美容护肤</a>
+						<a href="">休闲男鞋</a>
+						<a href="">黄金项链</a>
+						<a href="">单鞋</a>
+						<a href="">女包</a>
+						<a href="">文胸</a>
+						<a href="">大牌腕表</a>
+					</div>
+				</div>
+				<div class="beautifulList_content">
+					<div class="beautifulList_content_left">
+						<div class="_content_leftTop">
+								<img src="https://gw.alicdn.com/tfs/TB17otgSpXXXXbqXFXXXXXXXXXX-492-660.jpg"/>
+								<span>抵券低至99元</span>
+						</div>
+						<div class="_content_leftBottom">
+							<strong>天猫旅游节</strong>
+							<p>超值旅行装备</p>
+							<div class="decoration">
+							</div>
+						</div>
+					</div>
+					<div class="beautifulList_content_right">
+						<div class="_content_right_left">
+								<div class="image_textTop">
+									<div>
+										<a href="">
+											<small>红蜻蜓夏日换新履</small>
+											<p>陪你疯一下</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1TOxXSXXXXXc2XpXXSutbFXXX.jpg"/>
+									</div>
+									<div>
+										<a href="">
+											<small>夏天就是要凉爽</small>
+											<p>夏季必备衣服，T恤</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1iF7cRVXXXXayXFXXSutbFXXX.jpg"/>
+									</div>
+									<div>
+										<a href="">
+											<small>热情夏日</small>
+											<p>内外兼修的男性魅力</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1WMh5SXXXXXa7apXXSutbFXXX.jpg"/>
+									</div>
+								</div>
+								<div class="image_textBott">
+									<div>
+										<a href="">
+											<small>简约钱包</small>
+											<p>柔软皮层牛皮</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1HPjaSXXXXXbwXXXXSutbFXXX.jpg"/>
+									</div>
+									<div>
+										<a href="">
+											<small>型男夹克</small>
+											<p>中长款连帽夹克</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1u9EvSXXXXXcAaXXXSutbFXXX.jpg"/>
+									</div>
+									<div>
+										<a href="">
+											<small>气质长袖甜美蕾丝</small>
+											<p>优雅韩版大妈女蕾丝衫</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1GxZDSXXXXXanXVXXSutbFXXX.jpg"/>
+									</div>
+								</div>
+						</div>
+						<div class="_content_right_right">
+							<div class="">
+								<a href="">
+									<small>潮牌男包专区</small>
+									<p>都市青年潮包</p>
+								</a>
+								<img src="https://img.alicdn.com/i2/2/TB18npxSXXXXXbHapXXSutbFXXX.jpg"/>
+							</div>
+							<div class="">
+								<a href="">
+									<small>芳疗美肤</small>
+									<p>英国原装进口</p>
+								</a>
+								<img src="https://img.alicdn.com/i2/2/TB10CuoSXXXXXbxapXXSutbFXXX.jpg"/>
+							</div>
+							<div class="">
+								<a href="">
+									<small>17/夏季连衣裙</small>
+									<p>蕾丝镂空,清爽靓丽</p>
+								</a>
+								<img src="https://img.alicdn.com/i2/2/TB1HIuTRVXXXXXjXVXXSutbFXXX.jpg"/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!--潮电酷玩-->
+		<div class="beautiful">
+			<div class="beautifulList">
+				<div class="beautifulList_title">
+					<div class="beautifulList_title_left chaodianTitle">
+						<small>潮电酷玩</small><a>ELECTRONICS</a>
+					</div>
+					<div class="beautifulList_title_right">
+						<a href="">手机</a>
+						<a href="">iPhone</a>
+						<a href="">相机</a>
+						<a href="">数码配件</a>
+						<a href="">影音电玩</a>
+						<a href="">生活电器</a>
+						<a href="">个人护理</a>
+						<a href="">电脑硬件</a>
+						<a href="">笔记本</a>
+					</div>
+				</div>
+				<div class="beautifulList_content">
+					<div class="beautifulList_content_left">
+						<div class="_content_leftTop">
+								<img src="https://img.alicdn.com/tfs/TB1AoAZSXXXXXbWXFXXXXXXXXXX-492-660.jpg"/>
+								<span>满3000立减300 ></span>
+						</div>
+						<div class="_content_leftBottom ">
+							<strong>狂暑季电脑疯抢中</strong>
+							<p>苹果电脑底价再满减</p>
+							<div class="decoration">
+							</div>
+						</div>
+					</div>
+					<div class="beautifulList_content_right chaodianText">
+						<div class="_content_right_left">
+								<div class="image_textTop chaodianTop">
+									<div class="chaodianTopDiv">
+										<a href="">
+											<small>天猫狂暑季大牌手机会...</small>
+											<h4>爆款手机12期免息</h4>
+											<p>抢600元手机券</p>
+										</a>
+										<img src="https://img.alicdn.com/tfs/TB1QQ3.SXXXXXXdaVXXXXXXXXXX-400-400.jpg"/>
+									</div>
+									<div>
+										<a href="">
+											<small>魅族爆品0元套餐</small>
+											<p>暑促放价免息送礼</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1E2ISSXXXXXX.XVXXSutbFXXX.jpg"/>
+									</div>
+								</div>
+								<div class="image_textBott">
+									<div>
+										<a href="">
+											<small>聚变罗技</small>
+											<p>暑期放好价</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1BabZRVXXXXaMXFXXSutbFXXX.jpg"/>
+									</div>
+									<div>
+										<a href="">
+											<small>静享清凉一下</small>
+											<p>智能遥控5叶飓风</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1_YdjSXXXXXX3XXXXSutbFXXX.jpg"/>
+									</div>
+									<div>
+										<a href="">
+											<small>小家电狂暑季</small>
+											<p>跨店满减300元</p>
+										</a>
+										<img src="https://gw.alicdn.com/imgextra/i1/198/TB20ArRXhwlyKJjSZFsXXar3XXa_!!198-0-luban.jpg"/>
+									</div>
+								</div>
+						</div>
+						<div class="_content_right_right chaodianBottDiv">
+							<div class="">
+								<a href="">
+									<small>铁三角狂暑季</small>
+									<p>清凉一夏好声音</p>
+								</a>
+								<img src="https://img.alicdn.com/i2/2/TB1_kNMSpXXXXXOXFXXSutbFXXX.jpg"/>
+							</div>
+							
+							<div class="">
+								<a href="">
+									<small>电脑焕新就要快</small>
+									<p>英特尔新动力</p>
+								</a>
+								<img src="https://gw.alicdn.com/imgextra/i4/177/TB2Ux4zubJmpuFjSZFwXXaE4VXa_!!177-0-luban.jpg"/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!--宣传图片-->
+		<div class="publicity1">
+				<a href="">
+				<div class="">
+					<img src="https://img.alicdn.com/simba/img/TB1cPbHSXXXXXXqaFXXSutbFXXX.jpg"/>
+				</div>
+				</a>
+			</div>
+	<!--居家生活-->
+		<div class="beautiful familyLife">
+			<div class="beautifulList">
+				<div class="beautifulList_title">
+					<div class="beautifulList_title_left   familyLifeTitle">
+						<small>居家生活</small><a>GROCERY & HEALTH</a>
+					</div>
+					<div class="beautifulList_title_right">
+						<a href="">零食</a>
+						<a href="">牛奶</a>
+						<a href="">居家饰品</a>
+						<a href="">保温杯</a>
+						<a href="">保健品</a>
+						<a href="">常用药</a>
+						<a href="">热门图书</a>
+						<a href="">洗发水</a>
+						<a href="">卫生巾</a>
+						<a href="">家庭清洁</a>
+						<a href="">狗粮</a>
+					</div>
+				</div>
+				<div class="beautifulList_content">
+					<div class="beautifulList_content_left">
+						<div class="_content_leftTop">
+								<img src="https://img.alicdn.com/tps/i4/TB1eDVfSpXXXXcKXpXXSutbFXXX.jpg"/>
+								<span>店铺优惠满减 ></span>
+						</div>
+						<div class="_content_leftBottom  familyLife_bottom">
+							<strong>夏日吃货节</strong>
+							<p>抢限量新品</p>
+							<div class="decoration">
+							</div>
+						</div>
+					</div>
+					<div class="beautifulList_content_right  familyLifeText">
+						<div class="_content_right_left">
+								<div class="image_textTop">
+									<div>
+										<a href="">
+											<small>一桶天下大红袍</small>
+											<p>超值量贩装,武夷岩茶</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1DLvpRVXXXXXlapXXSutbFXXX.jpg"/>
+									</div>
+									<div>
+										<a href="">
+											<small>美食上新</small>
+											<p>没事上新尝鲜一夏</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1kVXuSpXXXXaMaXXXSutbFXXX.jpg"/>
+									</div>
+									<div>
+										<a href="">
+											<small>大号收纳箱</small>
+											<p>炫彩大容量</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1X6gNSXXXXXasXpXXSutbFXXX.jpg"/>
+									</div>
+								</div>
+								<div class="image_textBott">
+									<div>
+										<a href="">
+											<small>年中餐具好货</small>
+											<p>爆款免费送面碗</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1XH_HRVXXXXaMXFXXSutbFXXX.jpg"/>
+									</div>
+									<div>
+										<a href="">
+											<small>云南白药牙膏团购</small>
+											<p>缓解口腔问题</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1TY_ORVXXXXaTXVXXSutbFXXX.jpg"/>
+									</div>
+									<div>
+										<a href="">
+											<small>正宗绍兴黄酒</small>
+											<p>可支持免费试饮一瓶</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1LkmBSXXXXXbfXXXXSutbFXXX.jpg"/>
+									</div>
+								</div>
+						</div>
+						<div class="_content_right_right">
+							<div class="">
+								<a href="">
+									<small>年中感恩季</small>
+									<p>中式家具送礼专区</p>
+								</a>
+								<img src="https://img.alicdn.com/i2/2/TB1NvgcSXXXXXbtXpXXSutbFXXX.jpg"/>
+							</div>
+							<div class="">
+								<a href="">
+									<small>兰花香铁观音</small>
+									<p>匠心工艺品质典范</p>
+								</a>
+								<img src="https://img.alicdn.com/i2/2/TB1MAx8SXXXXXalXFXXSutbFXXX.jpg"/>
+							</div>
+							<div class="">
+								<a href="">
+									<small>新品床底收纳箱</small>
+									<p>有限空间叠加造大空间</p>
+								</a>
+								<img src="https://img.alicdn.com/i2/2/TB1AXJwSpXXXXakXpXXSutbFXXX.jpg"/>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	<!--打造爱巢-->
+		<div class="beautiful home">
+			<div class="beautifulList">
+				<div class="beautifulList_title">
+					<div class="beautifulList_title_left  homeTitle">
+						<small>打造爱巢</small><a>HOME</a>
+					</div>
+					<div class="beautifulList_title_right">
+						<a href="">家居</a>
+						<a href="">大家电</a>
+						<a href="">四件套</a>
+						<a href="">健康电器</a>
+						<a href="">厨房电器</a>
+						<a href="">吸顶灯</a>
+						<a href="">平板电视</a>
+						<a href="">装修设计</a>
+						<a href="">跑步机</a>
+					</div>
+				</div>
+				<div class="beautifulList_content">
+					<div class="beautifulList_content_left">
+						<div class="_content_leftTop">
+								<img src="https://img.alicdn.com/tfs/TB10wZxSXXXXXXWapXXXXXXXXXX-492-660.jpg"/>
+								<span>热水器安装辅材封顶 ></span>
+						</div>
+						<div class="_content_leftBottom  home_bottom">
+							<strong>大家电狂暑季</strong>
+							<p>钜惠抢不停</p>
+							<div class="decoration">
+							</div>
+						</div>
+					</div>
+					<div class="beautifulList_content_right  homeText">
+						<div class="_content_right_left">
+								<div class="image_textTop">
+									<div>
+										<a href="">
+											<small>七天造一个家</small>
+											<p>购快才畅快</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB14xZmSXXXXXclaFXXSutbFXXX.jpg"/>
+									</div>
+									<div>
+										<a href="">
+											<small>松下智能电子锁</small>
+											<p>四合一智能指纹锁</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1YruTSXXXXXbtXXXXSutbFXXX.jpg"/>
+									</div>
+									<div>
+										<a href="">
+											<small>窗帘轨道爆款推荐</small>
+											<p>49元全国上门测量</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1QkRiSpXXXXcFaXXXSutbFXXX.jpg"/>
+									</div>
+								</div>
+								<div class="image_textBott">
+									<div>
+										<a href="">
+											<small>玫瑰金浴霸</small>
+											<p>魅力格调智能浴霸</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1KdcvSXXXXXa1XFXXSutbFXXX.jpg"/>
+									</div>
+									<div>
+										<a href="">
+											<small>定时断电</small>
+											<p>轻松节能</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1OH2JSXXXXXa8aXXXSutbFXXX.jpg"/>
+									</div>
+									<div>
+										<a href="">
+											<small>大屏满减</small>
+											<p>买大屏上天猫</p>
+										</a>
+										<img src="https://gw.alicdn.com/imgextra/i3/61/TB21Ct2a5GO.eBjSZFpXXb3tFXa_!!61-0-yamato.jpg"/>
+									</div>
+								</div>
+						</div>
+						<div class="_content_right_right homeRight">
+							<div class="">
+								<a href="">
+									<small>JOY空气净化器</small>
+									<p>一机五色 一芯净化</p>
+								</a>
+								<img src="https://img.alicdn.com/imgextra/i4/1911901150/TB2JIkIrB0lpuFjSszdXXcdxFXa_!!1911901150.jpg_400x400.jpg"/>
+							</div>
+							<div class="">
+								<a href="">
+									<small>南方家居夏不为利</small>
+									<p>满额送礼三年质保</p>
+								</a>
+								<img src="https://img.alicdn.com/i2/2/TB1M_wqSXXXXXaUXpXXSutbFXXX.jpg"/>
+							</div>
+							<div class="">
+								<a href="">
+									<small>水果就要放心的吃</small>
+									<p>五星级享受有爱就够了</p>
+								</a>
+								<img src="https://img.alicdn.com/i2/2/TB161nKSXXXXXX1XXXXSutbFXXX.jpg"/>
+							</div>
+							<div class="">
+								<a href="">
+									<small>无线摄像头</small>
+									<p>高清画面实时监控</p>
+								</a>
+								<img src="https://img.alicdn.com/i2/2/TB1VM_3SXXXXXajXFXXSutbFXXX.jpg"/>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	<!--宣传图片-->
+		<div class="publicity1">
+				<a href="">
+				<div class="">
+					<img src="https://img.alicdn.com/simba/img/TB1AwiVPpXXXXccXpXXSutbFXXX.jpg"/>
+				</div>
+				</a>
+			</div>
+	<!--户外出行-->	
+		<div class="beautiful outdoor">
+			<div class="beautifulList">
+				<div class="beautifulList_title">
+					<div class="beautifulList_title_left   outdoorTitle">
+						<small>户外出行</small><a>OUTDOORS & AUTOMOTIVE</a>
+					</div>
+					<div class="beautifulList_title_right">
+						<a href="">车秒贷</a>
+						<a href="">皮肤衣</a>
+						<a href="">运动鞋</a>
+						<a href="">4s保养</a>
+						<a href="">行车记录仪</a>
+						<a href="">轮胎</a>
+					</div>
+				</div>
+				<div class="beautifulList_content">
+					<div class="beautifulList_content_left">
+						<div class="_content_leftTop">
+								<img src="https://img.alicdn.com/bao/uploaded/TB1Tp.bRVXXXXa2XXXXSutbFXXX.jpg"/>
+								<span>爆款单品最高立减300元 ></span>
+						</div>
+						<div class="_content_leftBottom outdoor_bottom">
+							<strong>天猫运动会</strong>
+							<p>大牌不止5折</p>
+							<div class="decoration">
+							</div>
+						</div>
+					</div>
+					<div class="beautifulList_content_right outdoorText">
+						<div class="_content_right_left">
+								<div class="image_textTop">
+									<div>
+										<a href="">
+											<small>盛夏狂暑季</small>
+											<p>清凉夏日纯棉短裤</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1X83eSXXXXXXgXpXXSutbFXXX.jpg"/>
+									</div>
+									<div>
+										<a href="">
+											<small>乔丹男鞋网面运动</small>
+											<p>轻便透气减震耐磨</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1ve8eSpXXXXbyXXXXSutbFXXX.jpg"/>
+									</div>
+									<div>
+										<a href="">
+											<small>神火强光手电</small>
+											<p>菜鸟配送·次日达</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1Q23TSXXXXXaaaVXXSutbFXXX.jpg"/>
+									</div>
+								</div>
+								<div class="image_textBott">
+									<div>
+										<a href="">
+											<small>车载空气净化器</small>
+											<p>海尔新品聚划算首发</p>
+										</a>
+										<img src="https://img.alicdn.com/tfs/TB1eeEySXXXXXaFapXXXXXXXXXX-400-400.jpg"/>
+									</div>
+									<div>
+										<a href="">
+											<small>夏日运动清爽来袭</small>
+											<p>多款多色大容量装</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1YPNxSXXXXXcPapXXSutbFXXX.jpg"/>
+									</div>
+									<div>
+										<a href="">
+											<small>特不运动男鞋</small>
+											<p>特步网面跑鞋</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1TgFOSXXXXXXpaXXXSutbFXXX.jpg"/>
+									</div>
+								</div>
+						</div>
+						<div class="_content_right_right">
+							<div class="">
+								<a href="">
+									<small>李宁专业男球鞋</small>
+									<p>一切皆有可能</p>
+								</a>
+								<img src="https://img.alicdn.com/i2/2/TB126lBSpXXXXcUXFXXSutbFXXX.jpg"/>
+							</div>
+							<div class="">
+								<a href="">
+									<small>鸿星尔克男鞋</small>
+									<p>透气轻便跑鞋</p>
+								</a>
+								<img src="https://img.alicdn.com/i2/2/TB10b6wSXXXXXaUaFXXSutbFXXX.jpg"/>
+							</div>
+							<div class="">
+								<a href="">
+									<small>羽鞋装备</small>
+									<p>踏上新的征途</p>
+								</a>
+								<img src="https://img.alicdn.com/i2/2/TB1E_dLSXXXXXclXVXXSutbFXXX.jpg"/>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	<!--亲子时光-->
+		<div class="beautiful kid">
+			<div class="beautifulList">
+				<div class="beautifulList_title">
+					<div class="beautifulList_title_left   kidTitle">
+						<small>亲子时光</small><a>KIDS & BABY</a>
+					</div>
+					<div class="beautifulList_title_right">
+						<a href="">童装</a>
+						<a href="">玩具</a>
+						<a href="">待产用品</a>
+						<a href="">文教用品</a>
+						<a href="">宝宝用品</a>
+						<a href="">儿童床品</a>
+						<a href="">奶粉</a>
+						<a href="">童书</a>
+						<a href="">纸尿裤</a>
+					</div>
+				</div>
+				<div class="beautifulList_content">
+					<div class="beautifulList_content_left">
+						<div class="_content_leftTop">
+								<img src="https://img.alicdn.com/tfs/TB17xoNSXXXXXaRapXXXXXXXXXX-492-660.jpg"/>
+								<span>不只5折 ></span>
+						</div>
+						<div class="_content_leftBottom kid_bottom">
+							<strong>图书乐器暑季狂欢</strong>
+							<p>百万图书5折起售</p>
+							<div class="decoration">
+							</div>
+						</div>
+					</div>
+					<div class="beautifulList_content_right kidText">
+											<div class="beautifulList_content_right outdoorText">
+						<div class="_content_right_left">
+								<div class="image_textTop">
+									<div>
+										<a href="">
+											<small>天猫开新车</small>
+											<p>先祖后买 可买可退</p>
+										</a>
+										<img src="https://gw.alicdn.com/imgextra/i3/3/TB2YN34qHtlpuFjSspfXXXLUpXa_!!3-0-luban.jpg"/>
+									</div>
+									<div>
+										<a href="">
+											<small>卡慢熊电动吸奶器</small>
+											<p>吸奶不疼痛</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB19t0wSXXXXXacapXXSutbFXXX.jpg"/>
+									</div>
+									<div>
+										<a href="">
+											<small>0-4岁婴幼儿服</small>
+											<p>夏季尝鲜抢先购</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1wKdeSXXXXXXCXVXXSutbFXXX.jpg"/>
+									</div>
+								</div>
+								<div class="image_textBott">
+									<div>
+										<a href="">
+											<small>给宝宝贴身保护</small>
+											<p>宛若妈妈的怀抱</p>
+										</a>
+										<img src="https://img.alicdn.com/i2/2/TB1c6xjSpXXXXaVXpXXSutbFXXX.jpg"/>
+									</div>
+									<div>
+										<a href="">
+											<small>关爱孩子成长</small>
+											<p>给TA好的奶粉</p>
+										</a>
+										<img src="https://img.alicdn.com/tps/TB1hABEMXXXXXbxaXXXXXXXXXXX-400-398.jpg"/>
+									</div>
+									<div>
+										<a href="">
+											<small>品牌纸尿裤</small>
+											<p>天猫特别装</p>
+										</a>
+										<img src="https://img.alicdn.com/tps/TB1moBzMXXXXXa7apXXXXXXXXXX-400-398.jpg"/>
+									</div>
+								</div>
+						</div>
+						<div class="_content_right_right">
+							<div class="">
+								<a href="">
+									<small>陪伴最好的礼物</small>
+									<p>儿童亲子绘本</p>
+								</a>
+								<img src="https://img.alicdn.com/tps/TB1Pf8WMXXXXXa2XpXXXXXXXXXX-400-398.jpg"/>
+							</div>
+							<div class="">
+								<a href="">
+									<small>老少皆宜</small>
+									<p>正品动漫手办</p>
+								</a>
+								<img src="https://img.alicdn.com/tps/TB1Ks1GMXXXXXb.XVXXXXXXXXXX-400-398.jpg"/>
+							</div>
+							<div class="">
+								<a href="">
+									<small>让皮肤有爱护</small>
+									<p>品牌儿童洗护</p>
+								</a>
+								<img src="https://img.alicdn.com/tps/TB1BflDMXXXXXagaXXXXXXXXXXX-400-398.jpg"/>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	<!--宣传图片-->
+		<div class="publicity1">
+				<a href="">
+				<div class="">
+					<img src="https://img.alicdn.com/simba/img/TB1cPbHSXXXXXXqaFXXSutbFXXX.jpg"/>
+				</div>
+				</a>
+			</div>
 		
 		</center>
 	</body>
+
 </html>
