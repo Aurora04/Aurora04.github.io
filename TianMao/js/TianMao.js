@@ -209,7 +209,8 @@ $(function() {
 						imgJ=6
 					}
 					$('#presentation_1 img').attr('src',presentationImg[imgJ]);
-					$('#presentation_2 img').attr('src',presentationImg[imgJ+1]);
+					imgJ++;
+					$('#presentation_2 img').attr('src',presentationImg[imgJ]);
 					$('#presentation_1').css('display','block');
 					$('#presentation_2').css('display','block');
 				}else{
