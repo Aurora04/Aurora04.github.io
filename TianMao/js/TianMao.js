@@ -32,7 +32,7 @@ $(function() {
 				clearInterval(timer);
 			}
 			console.log(1)
-		}, 20)
+		}, 2)
 	})
 	//当滚动条滚到500 距离的位置时 显示页面上方的搜索栏	
 	$(window).scroll(function() {
@@ -209,8 +209,7 @@ $(function() {
 						imgJ=6
 					}
 					$('#presentation_1 img').attr('src',presentationImg[imgJ]);
-					imgJ++;
-					$('#presentation_2 img').attr('src',presentationImg[imgJ]);
+					$('#presentation_2 img').attr('src',presentationImg[imgJ+1]);
 					$('#presentation_1').css('display','block');
 					$('#presentation_2').css('display','block');
 				}else{
@@ -307,7 +306,20 @@ $(function() {
 			$(this).children('img').removeClass();
 			$(this).children('img').addClass('imgRightBack');
 		});
-
+	//猜你喜欢 鼠标移入产生边框
+		$('.like_recommend ul li').mouseenter(function(){
+			$(this).css('border','1px solid red')
+			$(this).children('a').children('img').removeClass();
+			$(this).children('a').children('img').addClass('likeOpc');
+			
+		})
+		$('.like_recommend ul li').mouseleave(function(){
+			$(this).css('border','')
+			
+			$(this).children('a').children('img').removeClass();
+			$(this).children('a').children('img').addClass('likeOpcNo');
+			
+		})
 
 
 
