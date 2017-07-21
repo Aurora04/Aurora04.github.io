@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>迷宫光圈</title>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.top{
+				margin: auto;
+				height: 350px;
+				width: 200px;
+				background: linear-gradient(circle,#378ACF,black);
+				 background: -webkit-radial-gradient(circle,#378ACF, black);
+				 position: relative;
+			}
+			.top div{
+				box-sizing: border-box;
+				height: 50px;
+				width: 50px;
+				float: left;
+				/*background: white;*/
+				border: 3px solid white;
+				border-radius: 10px;
+			}
+			#per{
+				box-sizing: border-box;
+				height: 47px;
+				width:47px;
+				float: left;
+				margin: 1.5px;
+				background:#0D65BB ;
+				border-radius: 10px;
+				border: 0;
+				
+				position: absolute;
+				top: 150px;
+				left: 100px;
+				
+			}
+			#per img{
+				height: 80%;
+				width: 80%;
+				margin: 10%;
+			}
+			.whit{
+				background: white;
+			}
+			.yuan{
+				background: url(img/01.png) no-repeat center center;
+				background-size: cover;
+			}
+			.yet{
+				background:#004488 ;
+			}
+			strong{
+				margin-top: 30px;
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="top" gaNo = '1'>
+			<div class=""></div>
+			<div class=""></div>
+			<div class=""></div>
+			<div class=""></div>
+			
+			<div class="yuan"></div>
+			<div class="whit"></div>
+			<div class=""></div>
+			<div class="yuan"></div>
+			
+			<div class=""></div>
+			<div class="yuan"></div>
+			<div class="yuan"></div>
+			<div class=""></div>
+			
+			<div class="yuan"></div>
+			<div class="whit"></div>
+			<div class="yet"></div>
+			<div class="whit"></div>
+			
+			<div class=""></div>
+			<div class=""></div>
+			<div class=""></div>
+			<div class="yuan"></div>
+			
+			<div class=""></div>
+			<div class="whit"></div>
+			<div class="whit"></div>
+			<div class=""></div>
+			<div class=""></div>
+			<div class=""></div>
+			
+			<div class="yuan"></div>
+			<div class=""></div>
+			<div id="per">
+				<img src="img/02.png"/>
+			</div>
+		</div>
+		<strong>说明：上下左右移动 一次性吃完所有光圈 ，不得回走</strong>
+		<em>提示: 暂不支持goole浏览器</em>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+	<script type="text/javascript" src="js/game.js" ></script>
+</html>
