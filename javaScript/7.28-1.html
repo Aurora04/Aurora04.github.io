@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background: #191919;
+			}
+			.top {
+				width: 1103px;
+				height: 588px;
+				background: #191919;
+				text-align: center;
+			}
+			
+			.input {
+				margin-top: 50px;
+				display: inline-block;
+				margin-bottom: 20px;
+				color: #464748;
+				font-size: 20px;
+				font-weight: 700;
+			}
+			
+			.input a {
+				text-decoration: none;
+				color: #464748;
+				border-bottom: 1px dashed white;
+			}
+			
+			.top strong {
+				cursor: pointer;
+				display: inline-block;
+				width: 60px;
+				height: 60px;
+				margin: auto auto;
+				margin-left: 20px;
+				border-radius: 10px;
+				text-align: center;
+				line-height: 60px;
+				margin-bottom: 20px;
+			}
+			.kong strong:last-child{
+				display: inline-block;
+				width: 360PX;
+				height: 60px;
+				margin: auto auto;
+				margin-left: 20px;
+				border-radius: 10px;
+				text-align: center;
+				line-height: 60px;
+				margin-bottom: 20px;
+			}
+			.B{
+				border: 2px solid #00FE63;
+				color: #00FE63;
+			}
+			.A{
+				border:2px solid  #9500FE;
+				color: #9500FE;
+			}
+			.C{
+				border:2px solid  #4A4A4A;
+				color: #4A4A4A;
+			}
+			.D{
+				border:2px solid #FE004A;
+				color:#FE004A;
+			}
+			.E{
+				border:2px solid #FEE100;
+				color:#FEE100;
+			}
+			.SPACE{
+				border:2px solid #0095FE;
+				color:#0095FE;
+			}
+			.donghua{
+				-webkit-animation:donghua 0.7s forwards;
+			}
+			.donghua1{
+				-webkit-animation:donghua1 0.7s   forwards;
+			}
+			@-webkit-keyframes donghua{
+				from{
+					-webkit-transform: scale(1);
+					/*background: rgba(255,255,255,0);*/
+				}
+				to{
+					-webkit-transform: scale(1.2);
+					/*background: rgba(255,255,255,1);*/
+				}
+			}
+			@-webkit-keyframes donghua1{
+				from{
+					-webkit-transform: scale(1.2);
+					/*background: rgba(255,255,255,1);*/
+				}
+				to{
+					-webkit-transform: scale(1);
+					/*background: rgba(255,255,255,0);*/
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="top">
+			<p class="input">
+				<a href="">点击我</a>
+				让焦点到本页面后，键盘输入查看效果
+			</p>
+			<div class="center">
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		var arra=[
+					[{'class':'B','text':'1'},
+					{'class':'B','text':'2'},
+					{'class':'B','text':'3'},
+					{'class':'B','text':'4'},
+					{'class':'A','text':'5'},
+					{'class':'A','text':'6'},
+					{'class':'A','text':'7'},
+					{'class':'A','text':'8'},
+					{'class':'A','text':'9'},
+					{'class':'A','text':'0'},
+					{'class':'A heng','text':'-'}
+					],
+					[{'class':'B','text':'Q'},
+					{'class':'B','text':'W'	},
+					{'class':'B','text':'E'},
+					{'class':'B','text':'R'},
+					{'class':'C','text':'T'},
+					{'class':'D','text':'Y'},
+					{'class':'D','text':'U'},
+					{'class':'E','text':'I'},
+					{'class':'E','text':'O'},
+					{'class':'E','text':'P'}
+					],
+					[{'class':'B','text':'A'},
+					{'class':'B','text':'S'	},
+					{'class':'B','text':'D'},
+					{'class':'B','text':'F'},
+					{'class':'C','text':'G'},
+					{'class':'D','text':'H'},
+					{'class':'D','text':'J'},
+					{'class':'D','text':'K'},
+					{'class':'D','text':'L'}
+					],
+					[{'class':'B','text':'Z'},
+					{'class':'B','text':'X'	},
+					{'class':'B','text':'C'},
+					{'class':'B','text':'V'},
+					{'class':'C','text':'B'},
+					{'class':'C','text':'N'},
+					{'class':'D','text':'M'},
+					{'class':'D dou','text':','}
+					],
+					[{'class':'SPACE','text':'SPACE'}
+					],
+				];
+		var str ='';
+		var str1=''
+		for (var i = 0; i < arra.length; i++) {
+				for (var j = 0; j < arra[i].length; j++) {
+					str+='<strong class="'+arra[i][j].class+'">'+arra[i][j].text+'</strong>'
+				}
+				str1+='<p>'+str+'</p>';
+				str='';
+		}
+		$('.center').html(str1);
+		$('p:last-child').addClass('kong')
+		var color = '';
+		$('strong').mouseenter(function(){
+			co($(this))
+		})
+		$('strong').mouseleave(function(){
+			co1($(this))
+		})
+		
+		$(document).keydown(function(ev){
+			var newEv = ev ||event;
+			var ac = newEv.keyCode;
+			//获取按下的转换值
+			var keyText =String.fromCharCode(ac);
+			//空格
+			if(ac==32){
+				co($('.kong strong'))
+			}
+			//横线
+			if(ac==189){
+				co($('.heng'))
+			}
+			//逗号
+			if(ac==188){
+				co($('.dou'))
+			}
+			//寻找strong 内的HTML 是否跟所按下的键盘值相等
+			for (var i = 0; i < $('strong').length; i++) {
+				if(keyText==$('strong').eq(i).html()){
+					co($('strong').eq(i))
+				}
+			}
+		})
+		$(document).keyup(function(ev){
+			var newEv = ev ||event;
+			var ac = newEv.keyCode;
+			//获取按下的转换值
+			var keyText =String.fromCharCode(ac);
+			for (var i = 0; i < $('strong').length; i++) {
+				if(keyText==$('strong').eq(i).html()){
+					co1($('strong').eq(i));
+				}
+			}
+			//空格
+			if(ac==32){
+				co1($('.kong strong'));
+			}
+			//横线
+			if(ac==189){
+				co1($('.heng'))
+			}
+			//逗号
+			if(ac==188){
+				co1($('.dou'))
+			}
+		})
+//	点入
+	function co(obj){
+		color=obj.css('color');
+		obj.css('background-color',color);
+		obj.css('color','#191919');
+		obj.removeClass('donghua1');
+		obj.addClass('donghua');
+	}
+//	点出
+	function co1(obj){
+		if(color!=''){
+		obj.css('background-color','');
+		obj.css('color',color);
+		obj.removeClass('donghua');
+		obj.addClass('donghua1');
+		}
+	}
+	</script>
+
+</html>
